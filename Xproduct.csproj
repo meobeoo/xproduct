@@ -142,8 +142,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Contents\function.js" />
+    <Content Include="Contents\product.css" />
+    <Content Include="Contents\product.js" />
+    <Content Include="Contents\profile-styles.css" />
+    <Content Include="Contents\profile.js" />
     <Content Include="Contents\styles.css" />
     <Content Include="Contents\StyleSheet.css" />
+    <Content Include="Contents\tong-quan.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -238,6 +243,8 @@
     <Content Include="Views\TrangChu\Index.cshtml" />
     <Content Include="Views\Login\ForgotPassword.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\User\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

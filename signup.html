@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href ="styles.css"> 
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <title>X Product - Sign up</title>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+    <div class="login-container">
+        <button type="button" class="btnbacktologin" onclick="redirectToLogin()"><b>&nbsp;&nbsp;&nbsp;Đăng nhập</b></button>
+
+        <div class="fade">
+            <div class="slide">
+                <img src="source-img/login.png">
+            </div>
+            <div class="slide">
+                <img src="source-img/signup.png">
+            </div>
+            <div class="slide">
+                <img src="source-img/forgotpassword.png">
+            </div>
+        </div>
+        <div class="login-form-container">
+            <button type="button" class="close-form" onclick="closeForm()"></button>
+
+            <center><img src="source-img/logo.png" class="little-logo"></center><br>
+            <form class="login-form" id="signupForm" onsubmit="checkSignup(event)">
+                <div class="input-info">
+                    <label for="name" class="label">Họ tên </label>
+                    <input type="text" name="name" id="nameInput" placeholder="">
+                </div>
+                <div class="input-info">
+                    <label for="email" class="label">Email </label>
+                    <input type="text" class="label" name="email" id="emailInput" placeholder="">
+                </div>
+                <div class="input-info">
+                    <label for="phonenumber" class="label">Số điện thoại</label>
+                    <input type="text" class="label" name="phonenumber" id="phonenumberInput" placeholder="">
+                </div>
+                <div class="input-info">
+                    <label for="password" class="label">Mật khẩu</label>
+                    <div class="password-container">
+                        <input type="password" name="password" id="passwordInput" placeholder="">
+                        <img onclick="togglePassword()" src="source-img/eye-icon.png" id="eyeIcon" class="eye-icon">
+                    </div>
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="myCheckbox" name="myCheckbox" value="Đồng ý">
+                    <label for="myCheckbox">Tôi đồng ý với các điều khoản</label>
+                </div>
+                
+                <button type="submit" class="btnsubmit"><b>Đăng kí</b></button>
+            </form>
+            <center>
+            <div class="register-link">
+                <p>Bạn đã có tài khoản X-Product? <br> <a href="index.html" class="href_1">Đăng nhập</a></p>
+            </div></center>
+        </div>
+    </div>
+    <script src="signup-function.js"></script> 
+</body>
+</html>

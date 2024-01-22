@@ -1,0 +1,90 @@
+﻿@model Xproduct.Models.Dto.DtoUser
+@{
+    Layout = null;
+}
+@Styles.Render("~/Contents/styles.css")
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X Product</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!-- jQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+</head>
+<body>
+    @Html.Hidden("Text", (string)ViewBag.b);
+    <div class="login-container">
+        <div class="fade">
+            <div class="slide">
+                <img src="~/source-img/login.png">
+            </div>
+            <div class="slide">
+                <img src="~/source-img/signup.png">
+            </div>
+            <div class="slide">
+                <img src="~/source-img/forgotpassword.png">
+            </div>
+        </div>
+        @using (Html.BeginForm("Authen", "Login", FormMethod.Post, new { id = "FormLogin" }))
+        {
+            <div class="login-form-container">
+                @Html.AntiForgeryToken()
+                <button type="button" class="close-form" onclick="closeForm()"></button>
+                <center>
+                    <img src="~/source-img/Logo.png" class="logo">
+                    <bold><p id="login-title">Đăng nhập</p></bold>
+                </center>
+                <div class="login-form" id="loginForm" onsubmit="checkLogin(event)">
+                    <div class="input-info">
+                        <label for="username" class="label">Tên đăng nhập: <p class="redtext">*</p></label>
+                        @*<input type="text" name="username" id="usernameInput" placeholder="">*@
+                        <tr>
+                            <td>@Html.TextBoxFor(m => m.Email)</td>
+                        </tr>
+                    </div>
+                    <div class="input-info">
+                        <label for="password" class="label">Mật khẩu: <p class="redtext">*</p></label>
+                        <div class="password-container">
+                            @*<input type="password" name="password" id="passwordInput" placeholder="">*@
+                            <tr>
+                                @Html.PasswordFor(m => m.Password, new { id= "passwordInput" })
+                            </tr>
+                            <img src="~/source-img/eye-icon.png" alt="Hiển thị mật khẩu" id="eyeIcon" onclick="togglePassword()" class="eye-icon">
+                        </div>
+                    </div>
+                    <center><span id="passwordError" class="error-message"></span></center>
+                    <div id="divforgotpw">
+                        <a href="@Url.Action("ForgotPassword", "Login")" class="href">Quên mật khẩu?</a>
+                    </div>
+                    <button type="submit" id="login-button"><b>Đăng nhập</b></button>
+                </div>
+                <center>
+                    <div id="login-register-link">
+                        <p>Bạn chưa có tài khoản? <br> <a href="@Url.Action("Register", "Login")" class="href">Đăng ký</a></p>
+                    </div>
+                </center>
+            </div>
+        }
+    </div>
+    <script src="~/Contents/function.js?vs=@Guid.NewGuid()"></script>
+    <script>
+        if ($('#Text').val().length > 0) {
+            alert($('#Text').val());
+        }
+    </script>
+</body>
+</html>
+
+

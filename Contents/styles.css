@@ -1,0 +1,455 @@
+﻿body {
+    font-family: 'Roboto';
+    background-color: #bcbcbc;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: 900px;
+    max-height: 520px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    border: #707070;
+}
+
+.login-form-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    top: 0;
+    right: 0;
+    z-index: 2;
+}
+
+
+
+.fade .slick-dots-bottom {
+    position: absolute;
+    left: 203px;
+    bottom: 55px;
+    z-index: 1;
+    cursor: pointer;
+    display: flex; /* Cho phép xoay ngang */
+    flex-direction: row; /* Xoay ngang */
+}
+
+@media (max-width: 768px) {
+    .fade .slick-dots-bottom {
+        left: 144px;
+    }
+}
+
+.slick-dots-bottom li {
+    list-style: none; /* Ẩn chấm đánh số của slide */
+    margin: 0 4px; /* Khoảng cách giữa các dấu chấm */
+}
+
+.slick-dots-bottom button {
+    width: 8px; /* Điều chỉnh chiều rộng của các dấu chấm */
+    height: 12px; /* Điều chỉnh chiều cao của các dấu chấm */
+    border-radius: 50%;
+    font-size: 0;
+    background-color: #707070; /* Màu nền của dấu chấm */
+    border: none; /* Ẩn đường viền của dấu chấm */
+    outline: none; /* Ẩn đường viền khi được focus */
+}
+
+    .slick-dots-bottom button:hover {
+        background-color: #ffffff;
+    }
+
+    .slick-dots-bottom button.slick-active {
+        background-color: #ffffff;
+    }
+
+
+
+
+.login-form button {
+    width: 280px;
+    height: 36px;
+    background-color: #1a7ac2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+
+.form button {
+    background-color: #85ade8;
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-form input {
+    width: 280px;
+    height: 36px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: block;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+#login-title {
+    font-size: 28px;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.warning {
+    color: #DB2828;
+}
+
+.logo {
+    height: 64px;
+    width: 178px;
+    margin-top: 56px;
+}
+
+.little-logo {
+    margin-top: 20px;
+    width: 140px;
+    height: 50px;
+}
+
+.label {
+    word-wrap: nowrap;
+    display: inline-block;
+    color: #707070;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+
+.redtext {
+    color: #E50019;
+    display: inline;
+}
+
+.btnbacktologin {
+    background-color: transparent;
+    margin-left: 18px;
+    margin-top: 28px;
+    height: 20px;
+    width: 105px;
+    background-image: url('/source-img/back.png');
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: 999;
+}
+
+.close-form {
+    background-color: transparent;
+    height: 20px;
+    width: 20px;
+    background-image: url('/source-img/x-icon.png');
+    color: white;
+    border: none;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 999;
+}
+
+.hidden {
+    display: none;
+}
+
+.btnsubmit {
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.input-info {
+    width: 280px;
+    height: 57px;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.forgotpw {
+    width: 226px;
+    height: 19px;
+    font-size: 14px;
+    margin-top: 28px;
+}
+
+.register-link {
+    width: 208px;
+    height: 17px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.register-link-2 {
+    display: none;
+    width: 208px;
+    height: 17px;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#login-register-link {
+    width: 208px;
+    height: 17px;
+    font-size: 14px;
+    margin-top: 24px;
+}
+
+.href {
+    color: #035393;
+    font-size: 14px;
+}
+
+.href_1 {
+    color: #2185D0;
+    font-size: 14px;
+}
+
+.login-container .fade, .slide {
+    width: calc(100% - 360px);
+    height: 100%;
+    max-width: 540px;
+    position: relative;
+}
+
+    .login-container.fade.slide img {
+        width: calc(100%-360px);
+        height: 100%;
+        object-fit: cover;
+    }
+
+.titleforgotpw {
+    width: 280px;
+    height: 34px;
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+.red-text {
+    color: red;
+}
+
+.attention {
+    width: 275px;
+    height: 57px;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #707070;
+}
+
+.checkbox-container {
+    display: flex;
+    width: 210px;
+    height: 19px;
+    margin-top: 19px;
+    margin-left: 40px;
+    font-size: 14px;
+}
+
+#myCheckbox {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+#divforgotpw {
+    text-align: right;
+    margin-right: 40px;
+    margin-top: 8px;
+}
+
+#login-button {
+    width: 280px;
+    height: 36px;
+    background-color: #1A7AC2;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#input-username {
+    margin-top: 28px;
+}
+
+#usernameError, #passwordError {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 1px;
+}
+
+::placeholder {
+    color: red;
+}
+
+#input-mail::placeholder {
+    font-size: 14px;
+    color: #707070;
+}
+
+#input-mail {
+    color: #000;
+    padding: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    .login-form-container {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .btnbacktologin {
+        display: none;
+    }
+
+    .login-form input,
+    .login-form button,
+    .form button {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    #login-button {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .label {
+        margin-left: 5%;
+    }
+
+    .eye-icon {
+        margin-right: 5%;
+    }
+
+    #divforgotpw {
+        margin-right: 5%;
+    }
+
+    .checkbox-container {
+        margin-left: 2%;
+        width: 80%;
+    }
+
+    .register-link-2 {
+        display: block;
+    }
+
+    .input-info {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .login-form-container {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .login-form-container {
+        max-width: 360px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        zoom: 2;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.dropbtn {
+    width: 24px;
+    height: 24px;
+    color: white;
+    background-image: url(/source-img/menu.png);
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    margin-top: 13px;
+    margin-left: 13px;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+.show {
+    display: block;
+}
+
+#phonenumberInput, #emailInput, #usernameInput, #passwordInput, #nameInput, #input-mail {
+    color: #000;
+    padding: 10px;
+    font-size: 14px;
+}

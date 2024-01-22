@@ -1,0 +1,104 @@
+﻿@model Xproduct.Models.Dto.DtoUser
+@{
+    Layout = null;
+}
+@Styles.Render("~/Contents/styles.css")
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <title>X Product - Sign up</title>
+    <!-- jQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+    @Html.Hidden("Text", (string)ViewBag.c);
+    <div class="login-container">
+        <button type="button" class="close-form" onclick="closeForm()"></button>
+        <a href="@Url.Action("Index","Login")">
+            <button type="button" class="btnbacktologin" onclick="redirectToLogin()"><b>&nbsp;&nbsp;&nbsp;Đăng nhập</b></button>
+        </a>
+        <div class="fade">
+            <div class="slide">
+                <img src="~/source-img/login.png">
+            </div>
+            <div class="slide">
+                <img src="~/source-img/signup.png">
+            </div>
+            <div class="slide">
+                <img src="~/source-img/forgotpassword.png">
+            </div>
+        </div>
+        @using (Html.BeginForm("Register", "Login", FormMethod.Post, new { id = "FormRegister" }))
+        {
+            <div class="login-form-container">
+                <button type="button" class="close-form" onclick="closeForm()"></button>
+                <center><img src="~/source-img/logo.png" class="little-logo"></center><br>
+                <div class="login-form" id="signupForm" onsubmit="checkSignup(event)">
+                    @Html.AntiForgeryToken()
+                    <div class="input-info">
+                        <label for="name" class="label">Họ và tên </label>
+                        @*<input type="text" name="name" id="nameInput" placeholder="">*@
+                        <tr>
+                            <td>@Html.TextBoxFor(m => m.FullName)</td>
+                        </tr>
+                    </div>
+                    <div class="input-info">
+                        <label for="email" class="label">Email </label>
+                        @*<input type="text" class="label" name="email" id="emailInput" placeholder="">*@
+                        <tr>
+                            <td>@Html.TextBoxFor(m => m.Email, new { @class = "label" })</td>
+                        </tr>
+                    </div>
+                    <div class="input-info">
+                        <label for="phonenumber" class="label">Số điện thoại</label>
+                        @*<input type="text" class="label" name="phonenumber" id="phonenumberInput" placeholder="">*@
+                        <tr>
+                            <td>@Html.TextBoxFor(m => m.Sdt, new { @class = "label" })</td>
+                        </tr>
+                    </div>
+                    <div class="input-info">
+                        <label for="password" class="label">Mật khẩu</label>
+                        <div class="password-container">
+                            @*<input type="password" name="password" id="passwordInput" placeholder="">*@
+                            <tr>
+                                <td>@Html.PasswordFor(m => m.Password)</td>
+                            </tr>
+                            <img src="~/source-img/eye-icon.png" id="eye" onclick="togglePassword()" class="eye-icon">
+                        </div>
+                    </div>
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="myCheckbox" name="myCheckbox" value="Đồng ý">
+                        <label for="myCheckbox">Tôi đồng ý với các điều khoản</label>
+                    </div>
+
+                    <button type="submit" class="btnsubmit"><b>Đăng kí</b></button>
+                </div>
+                <center>
+                    <div class="register-link">
+                        <p>Bạn đã có tài khoản X-Product? <br> <a href="@Url.Action("Index","Login")" class="href">Đăng nhập</a></p>
+                    </div>
+                </center>
+            </div>
+        }
+        <script src="~/Contents/function.js?vs=@Guid.NewGuid()"></script>
+        <script>
+            if ($('#Text').val().length > 0) {
+                alert($('#Text').val());
+            }
+        </script>
+</body>
+    </html>
+   
+     

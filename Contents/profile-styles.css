@@ -1,0 +1,783 @@
+﻿* {
+    font-family: 'Roboto';
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 240px;
+    background: #ffffff;
+    /* transition: ease-in-out 1s; */
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+    .sidebar .logo_content {
+        position: absolute;
+        width: 240px;
+        height: 50px;
+        top: 0;
+        left: 0;
+        z-index: 4;
+        border-bottom: 2px solid #000;
+    }
+
+
+    .sidebar.thut {
+        width: 50px;
+    }
+
+        .sidebar.thut .logo {
+            display: none;
+        }
+
+    .sidebar .logo {
+        position: absolute;
+        width: 90px;
+        height: 32px;
+        left: 45px;
+        top: 9px;
+    }
+
+    .sidebar .nav_list {
+        position: absolute;
+        width: 240px;
+        height: calc(100% - 50px);
+        top: 50px;
+        left: 0;
+        padding-left: 0;
+    }
+
+    .sidebar #btn {
+        position: absolute;
+        color: #fff;
+        left: 13px;
+        top: 13px;
+        height: 24px;
+        width: 24px;
+        text-align: center;
+        background-image: url(source-img/menu.png);
+    }
+
+
+    .sidebar ul li {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        list-style: none;
+    }
+
+        .sidebar ul li a {
+            color: #000000;
+            display: flex;
+            text-decoration: none;
+            border-radius: 12px;
+            position: relative;
+        }
+
+            .sidebar ul li a div {
+                background-color: #fdfdfd;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 4px;
+                height: 50px;
+            }
+
+.selected {
+    color: #2185D0;
+    background: #fff;
+}
+
+.sidebar ul li a .selected div {
+    background-color: #2185D0;
+}
+
+.sidebar ul li a div.active {
+    background-color: #2185D0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 50px;
+}
+
+.sidebar ul li a span.active {
+    color: #2185D0;
+}
+
+.sidebar ul li a:hover {
+    color: #2185D0;
+    background: #fff;
+    filter: invert(54%) sepia(42%) saturate(2841%) hue-rotate(195deg) brightness(90%) contrast(88%);
+}
+
+.sidebar ul li a img {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    top: 16px;
+    left: 16px;
+}
+
+.sidebar ul li a span {
+    position: absolute;
+    height: 19px;
+    top: 15px;
+    left: 50px;
+    font-size: 14px;
+}
+
+.home_content {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 240px);
+    right: 0;
+    /* transition: ease-in-out 1s; */
+    background-color: #f8fafb;
+    z-index: 1;
+}
+
+.sidebar.thut + .home_content {
+    width: calc(100% - 50px);
+}
+
+.home_content .tool_bar {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    z-index: 2;
+    border-bottom: 1px solid #F3F4F6;
+}
+
+    .home_content .tool_bar .question {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 17px;
+        right: 187px;
+        background-image: url(source-img/question.png);
+        border: none;
+        outline: none;
+        filter: none;
+        background-color: #fff;
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+    .home_content .tool_bar .notification {
+        position: absolute;
+        width: 14px;
+        height: 16px;
+        top: 17px;
+        right: 149px;
+        background-image: url(source-img/notification.png);
+        border: none;
+        outline: none;
+        background-color: #fff;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .home_content .tool_bar .info_button {
+        position: absolute;
+        width: 117px;
+        height: 30px;
+        top: 10px;
+        right: 20px;
+        background-image: url(source-img/BG.png);
+        border: none;
+        outline: none;
+        background-color: #fff;
+    }
+
+    .home_content .tool_bar .question:hover {
+        transform: scale(1.5);
+        background-image: url(source-img/question1.png);
+    }
+
+    .home_content .tool_bar .notification:hover {
+        transform: scale(1.5);
+        background-image: url(source-img/notification1.png);
+    }
+
+    .home_content .tool_bar .info_button .user_avt {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 7px;
+        left: 12px;
+        z-index: 2;
+    }
+
+    .home_content .tool_bar .info_button span {
+        width: 41px;
+        height: 19px;
+        font-size: 14px;
+        left: 8px;
+        z-index: 1;
+    }
+
+    .home_content .tool_bar .info_button .down {
+        width: 12px;
+        height: 6px;
+        position: absolute;
+        top: 12px;
+        right: 14px;
+        z-index: 2;
+    }
+
+.home_content .tool_bar_2 {
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+    z-index: 2;
+    border-bottom: 1px solid #F3F4F6;
+    position: relative;
+}
+
+    .home_content .tool_bar_2 .title {
+        height: 28px;
+        font-size: 21px;
+        position: relative;
+        top: 10px;
+        left: 20px;
+        z-index: 0;
+    }
+
+.home_content .user_manager {
+    width: 280px;
+    height: 284px;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    z-index: 100000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+    .home_content .user_manager .user_info {
+        width: 280px;
+        height: 72px;
+        background-color: #F8F8F8;
+        top: 0;
+        left: 0;
+    }
+
+        .home_content .user_manager .user_info .show_avt {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            top: 12px;
+            left: 16px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: #2185D0;
+        }
+
+.show_avt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home_content .user_manager .user_info .user_name_and_mail {
+    position: absolute;
+    height: 40px;
+    left: 74px;
+    top: 15px;
+    font-size: 14px;
+}
+
+    .home_content .user_manager .user_info .user_name_and_mail .mail {
+        color: #707070;
+    }
+
+.home_content .user_manager .function_list li {
+    position: relative;
+    height: 42.4px;
+    width: 100%;
+    list-style: none;
+}
+
+    .home_content .user_manager .function_list li a {
+        height: 100%;
+        width: 100%;
+    }
+
+.home_content .user_manager ul li a {
+    color: #000000;
+    display: flex;
+    text-decoration: none;
+    border-radius: 12px;
+    position: relative;
+}
+
+.home_content .user_manager ul {
+    padding-left: 0;
+}
+
+    .home_content .user_manager ul li a:hover {
+        color: #2185D0;
+        background: #fff;
+    }
+
+    .home_content .user_manager ul li a img {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 16px;
+        left: 20px;
+    }
+
+    .home_content .user_manager ul li a span {
+        position: absolute;
+        height: 19px;
+        top: 14px;
+        left: 49px;
+        font-size: 14px;
+    }
+
+.home_content .user_manager.hidden {
+    display: none;
+}
+
+.home_content .info_option {
+    width: 92px;
+    height: 25px;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 14px;
+    border: none;
+    background-color: #f8fafb;
+    z-index: 4;
+    color: #707070;
+    position: relative;
+}
+
+/* CSS cho nút thông tin */
+.home_content .info_option {
+    width: 92px;
+    height: 25px;
+    margin-top: 15px;
+    font-size: 14px;
+    border: none;
+    color: #707070;
+    background-color: #f8fafb;
+    position: relative;
+    z-index: 4;
+}
+
+    .home_content .info_option.active {
+        color: #000000;
+        border-bottom: 2px solid #2185D0;
+    }
+
+/* CSS cho nút công việc */
+.home_content .info_option_2 {
+    width: 92px;
+    height: 25px;
+    margin-top: 15px;
+    font-size: 14px;
+    border: none;
+    color: #707070;
+    background-color: #f8fafb;
+    position: relative;
+    z-index: 4;
+}
+
+    .home_content .info_option_2.active {
+        color: #000000;
+        border-bottom: 2px solid #2185D0;
+    }
+
+
+.home_content .mot_duong_ke {
+    position: absolute;
+    top: 140px;
+    height: 1px;
+    width: 100%;
+    background-color: #E2E2E3;
+    z-index: 3;
+}
+
+
+
+
+.input-info {
+    width: 100%;
+    max-width: 300px;
+    height: 57px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.input-info-1 {
+    width: 100%;
+    max-width: 300px;
+    height: 57px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-top: 18px;
+}
+
+.input-info-2 {
+    width: 100%;
+    max-width: 300px;
+    height: 57px;
+    margin-left: 20px;
+}
+
+.input-info-3 {
+    width: 100%;
+    max-width: 300px;
+    height: 57px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-top: 18px;
+}
+
+.input-info-4 {
+    width: 100%;
+    max-width: 300px;
+    height: 57px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+}
+
+.label {
+    word-wrap: nowrap;
+    color: #707070;
+    font-size: 13px;
+    margin-bottom: 4px;
+    margin-left: 0;
+}
+
+.redtext {
+    color: #E50019;
+    display: inline;
+}
+
+.input {
+    width: 100%;
+    max-width: 300px;
+    height: 36px;
+    border: 1px solid #DEDEDF;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.gray_bg {
+    background-color: #F3F4F6;
+}
+
+.gender {
+    position: relative;
+    ;
+    width: 280px;
+    height: 19px;
+    margin-top: 19px;
+    margin-left: 20px;
+}
+
+.containerr {
+    width: 100%;
+    max-width: 920px;
+    height: 100%;
+    max-height: 401px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+    .containerr.row {
+        width: 100%;
+        max-width: 920px;
+    }
+
+.user_info_container {
+    width: 220px;
+    height: 248px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #F3F4F6;
+}
+
+.user_big_avt {
+    width: 180px;
+    height: 152px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#span_1 {
+    height: 21px;
+    font-size: 16px;
+    margin-bottom: 2px;
+    margin-left: 87px;
+}
+
+#span_2 {
+    height: 19px;
+    font-size: 14px;
+    margin-left: 52px;
+    margin-bottom: 20px;
+}
+
+#info_form {
+    width: 690px;
+    height: 401px;
+    border-radius: 8px;
+    display: inline-block;
+    background-color: #f8fafb;
+}
+
+#col_1 {
+    width: 340px;
+    height: 401px;
+    background-color: #fff;
+    border: 1px solid #F3F4F6;
+    border-right: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#select_date {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    right: 10px;
+    bottom: 6px;
+    background-image: url(source-img/calendar.png);
+    border: none;
+}
+
+#text_gender {
+    font-size: 13px;
+    color: #707070;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+#radio_male {
+    left: 77px;
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+}
+
+#label_male {
+    font-size: 14px;
+    left: 103px;
+    position: absolute;
+}
+
+#radio_female {
+    left: 173px;
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+}
+
+#label_female {
+    font-size: 14px;
+    left: 199px;
+    position: absolute;
+}
+
+#col_2 {
+    width: 340px;
+    height: 401px;
+    background-color: #fff;
+    border: 1px solid #F3F4F6;
+    border-left: none;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#dropdown {
+    width: 100%;
+    max-width: 300px;
+    height: 36px;
+    padding: 5px;
+    background-color: #F3F4F6;
+    border: 1px solid #DEDEDF;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #707070;
+    appearance: none;
+}
+
+#dropdown_2 {
+    width: 100%;
+    max-width: 300px;
+    height: 36px;
+    padding: 5px;
+    background-color: #F3F4F6;
+    border: 1px solid #DEDEDF;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #707070;
+    appearance: none;
+}
+
+
+
+#datepicker > span:hover {
+    cursor: pointer;
+}
+
+.datepicker-dropdown {
+    padding: auto;
+    width: auto;
+    font-size: 19px;
+}
+
+.tool_bar_2 #cancel {
+    width: 80px;
+    height: 30px;
+    background-image: url(source-img/Group\ 23073.png);
+    border-radius: 4px;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 110px;
+}
+
+.tool_bar_2 #save {
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    background-image: url(source-img/Group\ 23060.png);
+    border-radius: 4px;
+    border: none;
+    top: 10px;
+    right: 20px;
+}
+
+
+
+
+.home_content .tool_bar .info_button .username {
+    color: #000;
+}
+
+.home_content .user_manager .user_info .user_name_and_mail .name {
+    color: #000;
+}
+
+#btn2 {
+    width: 12px;
+    left: 22px;
+}
+
+.sidebar .mot_duong_ke {
+    height: 0.5px;
+    width: 100%;
+    position: absolute;
+    background-color: #F3F4F6;
+    top: 49.75px;
+    left: 0;
+    z-index: 100000;
+}
+
+.home_content .tool_bar .info_button .username {
+    color: #000;
+}
+
+.home_content .user_manager .user_info .user_name_and_mail .name {
+    color: #000;
+}
+
+#btn2 {
+    width: 12px;
+    left: 22px;
+}
+
+
+@media only screen and (max-width: 1035px) {
+    .input-info-3, .input-info-4 {
+        margin-left: 20px;
+    }
+
+    #col_1 {
+        background-color: #f8fafb;
+        border: none;
+    }
+
+    #col_2 {
+        background-color: #f8fafb;
+        border: none;
+    }
+
+    .user_info_container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .input-info, .input-info-1, .input-info-2, .input-info-3, .input-info-4, .gender {
+        margin-left: 10px;
+    }
+    /* .sidebar {
+        width: 50px;
+    }
+    .home_content{
+        width: calc(100% - 50px);
+    } */
+    /* .sidebar .logo{
+        display: none;
+    } */
+    #col_1, #col_2 {
+        width: 100%;
+    }
+
+    #info_form {
+        width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .home_content .tool_bar_2 .title {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 376px) {
+    .home_content {
+        position: absolute;
+        height: 100%;
+        width: calc(100% - 230px);
+        right: -10px;
+        transition: ease-in-out 1s;
+        background-color: #f8fafb;
+        z-index: 1;
+    }
+
+    .sidebar.thut + .home_content {
+        width: calc(100% - 40px);
+    }
+}
+
+.page {
+    display: none;
+}
+
+#infoPage.show, #workPage.show {
+    display: block;
+}

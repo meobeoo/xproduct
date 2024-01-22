@@ -65,7 +65,7 @@ body {
         height: 24px;
         width: 24px;
         text-align: center;
-        background-image: url(source-img/menu.png);
+        background-image: url('/source-img/menu.png');
     }
 
 
@@ -165,7 +165,7 @@ body {
         height: 16px;
         top: 17px;
         right: 187px;
-        background-image: url(source-img/question.png);
+        background-image: url('/source-img/question.png');
         border: none;
         outline: none;
         filter: none;
@@ -180,7 +180,7 @@ body {
         height: 16px;
         top: 17px;
         right: 149px;
-        background-image: url(source-img/notification.png);
+        background-image: url('/source-img/notification.png');
         border: none;
         outline: none;
         background-color: #fff;
@@ -193,7 +193,7 @@ body {
         height: 30px;
         top: 10px;
         right: 20px;
-        background-image: url(source-img/BG.png);
+        background-image: url('/source-img/BG.png');
         border: none;
         outline: none;
         background-color: #fff;
@@ -201,12 +201,12 @@ body {
 
     .home_content .tool_bar .question:hover {
         transform: scale(1.5);
-        background-image: url(source-img/question1.png);
+        background-image: url('/source-img/question1.png');
     }
 
     .home_content .tool_bar .notification:hover {
         transform: scale(1.5);
-        background-image: url(source-img/notification1.png);
+        background-image: url('/source-img/notification1.png');
     }
 
     .home_content .tool_bar .info_button .user_avt {
@@ -559,7 +559,7 @@ body {
     position: absolute;
     right: 10px;
     bottom: 6px;
-    background-image: url(source-img/calendar.png);
+    background-image: url('/source-img/calendar.png');
     border: none;
 }
 
@@ -650,7 +650,7 @@ body {
 .tool_bar_2 #cancel {
     width: 80px;
     height: 30px;
-    background-image: url(source-img/Group\ 23073.png);
+    background-image: url('/source-img/Group\ 23073.png');
     border-radius: 4px;
     border: none;
     position: absolute;
@@ -662,7 +662,7 @@ body {
     position: absolute;
     width: 80px;
     height: 30px;
-    background-image: url(source-img/Group\ 23060.png);
+    background-image: url('/source-img/Group\ 23060.png');
     border-radius: 4px;
     border: none;
     top: 10px;

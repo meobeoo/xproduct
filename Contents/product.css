@@ -66,7 +66,7 @@ body {
         height: 24px;
         width: 24px;
         text-align: center;
-        background-image: url(source-img/menu.png);
+        background-image: url('/source-img/menu.png');
     }
 
 
@@ -166,7 +166,7 @@ body {
         height: 16px;
         top: 17px;
         right: 187px;
-        background-image: url(source-img/question.png);
+        background-image: url('/source-img/question.png');
         border: none;
         outline: none;
         background-color: #fff;
@@ -179,7 +179,7 @@ body {
         height: 16px;
         top: 17px;
         right: 149px;
-        background-image: url(source-img/notification.png);
+        background-image: url('/source-img/notification.png');
         border: none;
         outline: none;
         background-color: #fff;
@@ -192,7 +192,7 @@ body {
         height: 30px;
         top: 10px;
         right: 20px;
-        background-image: url(source-img/BG.png);
+        background-image: url('/source-img/BG.png');
         border: none;
         outline: none;
         background-color: #fff;
@@ -200,12 +200,12 @@ body {
 
     .home_content .tool_bar .question:hover {
         transform: scale(1.5);
-        background-image: url(source-img/question1.png);
+        background-image: url('/source-img/question1.png');
     }
 
     .home_content .tool_bar .notification:hover {
         transform: scale(1.5);
-        background-image: url(source-img/notification1.png);
+        background-image: url('/source-img/notification1.png');
     }
 
     .home_content .tool_bar .info_button .user_avt {
@@ -351,7 +351,7 @@ body {
     }
 
 .tool_bar_2 #add {
-    background-image: url(source-img/add.png);
+    background-image: url('/source-img/add.png');
     width: 108px;
     height: 30px;
     position: absolute;
@@ -362,7 +362,7 @@ body {
 }
 
 .tool_bar_2 #import {
-    background-image: url(source-img/Component\ 42\ –\ 1.png);
+    background-image: url('/source-img/Component\ 42\ –\ 1.png');
     width: 122px;
     height: 30px;
     position: absolute;

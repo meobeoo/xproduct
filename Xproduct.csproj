@@ -245,6 +245,12 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\Profile.cshtml" />
     <Content Include="Views\User\Product.cshtml" />
+    <Content Include="Views\User\Statistical.cshtml" />
+    <Content Include="Views\User\Setting.cshtml" />
+    <Content Include="Views\User\Support.cshtml" />
+    <Content Include="Views\User\Notification.cshtml" />
+    <Content Include="Views\User\ChangePasswordPage.cshtml" />
+    <Content Include="Views\User\UpgradeAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

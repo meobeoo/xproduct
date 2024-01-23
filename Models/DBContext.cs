@@ -13,6 +13,7 @@ namespace Xproduct.Models
         }
 
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<ChucVu> ChucVus { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

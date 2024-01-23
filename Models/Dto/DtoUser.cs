@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -42,5 +43,20 @@ namespace Xproduct.Models.Dto
         //[Required(ErrorMessage = "Thông tin Confirm Passwork sai")]
         //public string ConfirmPassword { get; set; }
         public string LoginErrorMessage { get; set; }
+
+        [StringLength(50)]
+        public string CCCD { get; set; }
+
+        [StringLength(50)]
+        public string PhongBan { get; set; }
+
+        public int? IdChucVu { get; set; }
+
+        [Column(TypeName = "date")]
+        public DateTime? NgaySinh { get; set; }
+
+        public int? GioiTinh { get; set; }
+
+        public virtual ChucVu ChucVu { get; set; }
     }
 }

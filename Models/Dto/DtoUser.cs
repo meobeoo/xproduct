@@ -22,9 +22,9 @@ namespace Xproduct.Models.Dto
         public string Email { get; set; }
 
 
-        [StringLength(10)]
-        [RegularExpression(@"/^0\d{9}$/;")]
-        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
+        //[StringLength(10)]
+        //[RegularExpression(@"^0\d{9}$")]
+        //[Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
         public string Sdt { get; set; }
 
 

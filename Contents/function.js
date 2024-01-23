@@ -52,8 +52,8 @@ function checkSignup(event) {
          return false
     }
     alert("Bạn đã chắc chắn với thông tin tạo mới tài khoản?");
-   /* window.location.href = '/login/index';*/
-    return true;
+   ///* window.location.href = '/login/index';*/
+   return true;
 }
 
 //function validateFullname(name) {
@@ -95,7 +95,7 @@ $(document).ready(function () {
     });
 
     $('#FormRegister').on('submit', (e) => {
-        checkSignup(e);
+        checksignup(e);
     })
     $('#FormLogin').on('submit', (e) => {
         checkLogin(e);
@@ -125,15 +125,15 @@ function checkLogin(event) {
 }
 
 function togglePassword() {
-    var passwordInput = document.getElementById("passwordInput");
+    var Password = document.getElementById("Password");
     var eyeIcon = document.getElementById("eyeIcon");
 
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        eyeIcon.src = "~/source-img/eye-icon-2.png";
+    if (Password.type === "password") {
+        Password.type = "text";
+        eyeIcon.src = "/source-img/eye-icon-2.png";
     } else {
-        passwordInput.type = "password";
-        eyeIcon.src = "~/source-img/eye-icon.png";
+        Password.type = "password";
+        eyeIcon.src = "/source-img/eye-icon.png";
     }
 }
 

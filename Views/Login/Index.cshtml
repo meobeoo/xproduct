@@ -50,17 +50,17 @@
                     <div class="input-info">
                         <label for="username" class="label">Tên đăng nhập: <p class="redtext">*</p></label>
                         @*<input type="text" name="username" id="usernameInput" placeholder="">*@
-                        <tr>
-                            <td>@Html.TextBoxFor(m => m.Email)</td>
-                        </tr>
+                       
+                            @Html.TextBoxFor(m => m.Email)
+                       
                     </div>
                     <div class="input-info">
                         <label for="password" class="label">Mật khẩu: <p class="redtext">*</p></label>
                         <div class="password-container">
                             @*<input type="password" name="password" id="passwordInput" placeholder="">*@
-                            <tr>
-                                @Html.PasswordFor(m => m.Password, new { id= "passwordInput" })
-                            </tr>
+                          
+                                @Html.PasswordFor(m => m.Password)
+                   
                             <img src="~/source-img/eye-icon.png" alt="Hiển thị mật khẩu" id="eyeIcon" onclick="togglePassword()" class="eye-icon">
                         </div>
                     </div>

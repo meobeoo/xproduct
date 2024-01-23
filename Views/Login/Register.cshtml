@@ -50,32 +50,32 @@
                     <div class="input-info">
                         <label for="name" class="label">Họ và tên </label>
                         @*<input type="text" name="name" id="nameInput" placeholder="">*@
-                        <tr>
-                            <td>@Html.TextBoxFor(m => m.FullName)</td>
-                        </tr>
+                  
+                            @Html.TextBoxFor(m => m.FullName)
+                       
                     </div>
                     <div class="input-info">
                         <label for="email" class="label">Email </label>
                         @*<input type="text" class="label" name="email" id="emailInput" placeholder="">*@
-                        <tr>
-                            <td>@Html.TextBoxFor(m => m.Email, new { @class = "label" })</td>
-                        </tr>
+                       
+                            @Html.TextBoxFor(m => m.Email, new { @class = "label" })
+                      
                     </div>
                     <div class="input-info">
                         <label for="phonenumber" class="label">Số điện thoại</label>
                         @*<input type="text" class="label" name="phonenumber" id="phonenumberInput" placeholder="">*@
-                        <tr>
-                            <td>@Html.TextBoxFor(m => m.Sdt, new { @class = "label" })</td>
-                        </tr>
+                     
+                            @Html.TextBoxFor(m => m.Sdt, new { @class = "label" })
+                        
                     </div>
                     <div class="input-info">
                         <label for="password" class="label">Mật khẩu</label>
                         <div class="password-container">
                             @*<input type="password" name="password" id="passwordInput" placeholder="">*@
-                            <tr>
-                                <td>@Html.PasswordFor(m => m.Password)</td>
-                            </tr>
-                            <img src="~/source-img/eye-icon.png" id="eye" onclick="togglePassword()" class="eye-icon">
+                           
+                             @Html.PasswordFor(m => m.Password)
+                            
+                            <img src="~/source-img/eye-icon.png" id="eyeIcon" onclick="togglePassword()" class="eye-icon">
                         </div>
                     </div>
                     <div class="checkbox-container">

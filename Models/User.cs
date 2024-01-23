@@ -34,8 +34,8 @@
         [StringLength(50)]
         public string CCCD { get; set; }
 
-        [StringLength(50)]
-        public string PhongBan { get; set; }
+       
+        public int? IdPhongBan { get; set; }
 
         public int? IdChucVu { get; set; }
 
@@ -45,5 +45,6 @@
         public int? GioiTinh { get; set; }
 
         public virtual ChucVu ChucVu { get; set; }
+        public virtual PhongBan PhongBan { get; set; }
     }
 }

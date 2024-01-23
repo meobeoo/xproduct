@@ -135,6 +135,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\PhongBan.cs" />
     <Compile Include="Models\ChucVu.cs" />
     <Compile Include="Models\DBContext.cs" />
     <Compile Include="Models\Dto\DtoUser.cs" />

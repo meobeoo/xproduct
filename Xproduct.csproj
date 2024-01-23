@@ -148,6 +148,7 @@
     <Content Include="Contents\profile.js" />
     <Content Include="Contents\styles.css" />
     <Content Include="Contents\StyleSheet.css" />
+    <Content Include="Contents\tong-quan.css" />
     <Content Include="Contents\tong-quan.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />

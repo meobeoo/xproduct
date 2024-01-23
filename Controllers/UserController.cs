@@ -14,8 +14,7 @@ namespace Xproduct.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var listUser = new DBContext().Users.ToList();
-            return View(listUser);
+            return View();
         }
 
 

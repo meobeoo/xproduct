@@ -1,5 +1,4 @@
 ﻿
-
 document.addEventListener('DOMContentLoaded', function () {
     // Get the necessary elements
     const sidebar = document.querySelector('.sidebar');
@@ -17,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // You may want to add more styling adjustments or animations as needed
     });
 });
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     var userManager = document.querySelector(".home_content .user_manager");
@@ -133,6 +134,15 @@ function showInfoPage() {
     infoButton.classList.add('active');
     workButton.classList.remove('active');
 }
+function onFile() {
+    $("#image").click();
+}
+$("#image").on('change', function (evt) {
+    const [file] = $("#image")[0].files;
+    if (file) {
+        $("#id_image").attr('src', URL.createObjectURL(file));
+    }
+});
 
 // Hàm hiển thị trang Công việc
 function showWorkPage() {
@@ -169,3 +179,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Rest of your code for the new page
 });
+
+

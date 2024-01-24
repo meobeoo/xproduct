@@ -34,7 +34,9 @@
         [StringLength(50)]
         public string CCCD { get; set; }
 
-       
+        [StringLength(50)]
+        public string DiaChi { get; set; }
+
         public int? IdPhongBan { get; set; }
 
         public int? IdChucVu { get; set; }

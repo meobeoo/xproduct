@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Net.Mail;
@@ -33,6 +34,7 @@ namespace Xproduct.Controllers
             }
             else
             {
+                Session["sesion"] = check;
                 return RedirectToAction("Index", "User");
             }
         }

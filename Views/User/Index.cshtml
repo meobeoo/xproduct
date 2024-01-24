@@ -1,6 +1,9 @@
-﻿@model Xproduct.Models.Dto.DtoUser
+﻿@using Xproduct.Models
+@model Xproduct.Models.Dto.DtoUser
+
 @{
     Layout = null;
+    User user = (User)Session["sesion"];
 }
 @Styles.Render("~/Contents/tong-quan.css")
 
@@ -79,8 +82,8 @@
             <div class="user_info">
                 <img class="show_avt" src="~/source-img/Group 22934.png">
                 <div class="user_name_and_mail">
-                    <span class="name"><b>Admin</b></span><br>
-                    <span class="mail">Email: admin@gmail.com</span>
+                    <span class="name"><b>@user.FullName</b></span><br>
+                    <span class="mail">Email: @user.Email</span>
                 </div>
             </div>
             <ul class="function_list">

@@ -51,12 +51,17 @@ namespace Xproduct.Models.Dto
         public string PhongBan { get; set; }
 
         public int? IdChucVu { get; set; }
+        public int? IdPhongBan { get; set; }
 
         [Column(TypeName = "date")]
         public DateTime? NgaySinh { get; set; }
 
         public int? GioiTinh { get; set; }
 
+        [StringLength(500)]
+        public string Image { get; set; }
+
         public virtual ChucVu ChucVu { get; set; }
+        public virtual PhongBan PhongBan { get; set; }
     }
 }

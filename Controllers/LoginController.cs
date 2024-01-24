@@ -33,7 +33,7 @@ namespace Xproduct.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "TrangChu");
+                return RedirectToAction("Index", "User");
             }
         }
 

@@ -28,17 +28,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-$(function () {
-    $("#datepicker input").datepicker({
-        autoclose: true,
-        todayHighlight: true,
-    }).datepicker('update', new Date());
+//$(function () {
+//    $("#datepicker input").datepicker({
+//        autoclose: true,
+//        todayHighlight: true,
+//    }).datepicker('update', new Date());
 
-    $("#select_date").click(function () {
-        e.preventDefault();
-        $("#datepicker input").datepicker("show");
-    });
-});
+//    $("#select_date").click(function () {
+//        e.preventDefault();
+//        $("#datepicker input").datepicker("show");
+//    });
+//});
 
 // document.getElementById('cancel').addEventListener('click', function() {
 //     var isConfirmed = confirm("Bạn chưa lưu thông tin. Bạn có thật sự muốn hủy không?");

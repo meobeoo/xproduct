@@ -554,13 +554,13 @@ body {
 }
 
 #select_date {
-    width: 14px;
+ /*   width: 14px;
     height: 14px;
     position: absolute;
     right: 10px;
-    bottom: 6px;
-    background-image: url('/source-img/calendar.png');
-    border: none;
+    bottom: 6px*/;
+/*    background-image: url('/source-img/calendar.png');*/
+/*    border: none;*/
 }
 
 #text_gender {

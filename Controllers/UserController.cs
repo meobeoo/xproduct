@@ -9,7 +9,7 @@ namespace Xproduct.Controllers
 {
     public class UserController : Controller
     {
-        DBContext _db = new DBContext();
+        //DBContext _db = new DBContext();
         // GET: User
         [HttpGet]
         public ActionResult Index()
@@ -18,12 +18,12 @@ namespace Xproduct.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Profile()
+        {
 
-        //[HttpPost]
-        //public ActionResult Index()
-        //{
-        //    return View();
-        //}
+            return View();
+        }
     }
      
    

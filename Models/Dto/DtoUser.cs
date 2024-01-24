@@ -47,8 +47,6 @@ namespace Xproduct.Models.Dto
         [StringLength(50)]
         public string CCCD { get; set; }
 
-        [StringLength(50)]
-        public string PhongBan { get; set; }
 
         public int? IdChucVu { get; set; }
         public int? IdPhongBan { get; set; }

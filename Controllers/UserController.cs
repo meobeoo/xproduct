@@ -60,6 +60,13 @@ namespace Xproduct.Controllers
 
         }
 
+        public ActionResult UpImage()
+        {
+
+
+            return View();
+        }
+
 
     }
 

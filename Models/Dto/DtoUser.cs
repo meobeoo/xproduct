@@ -59,8 +59,15 @@ namespace Xproduct.Models.Dto
 
         public int? GioiTinh { get; set; }
 
-        [StringLength(500)]
-        public string Image { get; set; }
+        public string ImageBase64
+        {
+            get
+            {
+                return "data:image/jpeg;base64," + Convert.ToBase64String(Image);
+            }
+        }
+        public byte[] Image { get; set; }
+
 
         public virtual ChucVu ChucVu { get; set; }
         public virtual PhongBan PhongBan { get; set; }

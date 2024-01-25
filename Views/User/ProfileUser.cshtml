@@ -1,0 +1,132 @@
+﻿@using Xproduct.Models
+@model Xproduct.Models.Dto.DtoUser
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; ;
+    User user = (User)Session["sesion"];
+}
+@Styles.Render("~/Contents/profile-styles.css")
+@using (Html.BeginForm("ProfileUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.HiddenFor(x => x.idUser)
+    <div class="tool_bar_2">
+        <span class="title"><b>Hồ sơ cá nhân</b></span>
+        <button type="button" id="cancel"></button>
+        <button type="submit" id="save"></button>
+    </div>
+    <button class="info_option" onclick="showInfoPage()"><b>Thông tin</b></button>
+    <button class="info_option_2" onclick="showWorkPage()"><b>Công việc</b></button>
+    <div class="mot_duong_ke"></div>
+
+
+    <div class="containerr page show" id="infoPage">
+        <div class="row">
+            <div class="col-sm" style="display: inline-block;">
+                <div class="user_info_container">
+                    <input type="file" name="fileToUpload" class="input_image" id="image" accept="image/*" />
+                    <img class="user_big_avt" id="id_image" onclick="onFile()" src="@Model.ImageBase64">
+                    <span id="span_1"><b>@user.FullName</b></span>
+                    <span id="span_2">@user.Email</span>
+                </div>
+            </div>
+            <div id="info_form">
+                <div class="row">
+                    <div class="col-sm" id="col_1">
+                        <div class="input-info-1">
+                            <label for="username" class="label">Tên truy cập: <p class="redtext">*</p></label>
+                            @*<input type="text" name="username" class="input gray_bg" readonly>*@
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
+                        </div>
+                        <div class="input-info">
+                            <label for="username" class="label">Email: <p class="redtext">*</p></label>
+                            @*<input type="text" name="username" class="input gray_bg" readonly>*@
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
+                        </div>
+                        <div class="input-info">
+                            <label for="username" class="label">Họ và tên: <p class="redtext">*</p></label>
+                            @*<input type="text" name="username" class="input gray_bg" readonly>*@
+                            @Html.TextBoxFor(m => m.FullName, new { @class = "input gray_bg", @readonly = "readonly" })
+                        </div>
+                        <div id="datepicker" class="input-info" style="position: relative;">
+                            <label for="username" class="label">Ngày sinh: </label>
+                            <!--<input type="date" name="username" class="input"-->
+                            @*data-date-format="dd-mm-yy"*@
+                            <!--value="
+                            readonly>-->
+                            @Html.TextBox("NgaySinh", Model.NgaySinh?.ToString("yyyy-MM-dd"), new { @class = "input", type = "date" })
+                           
+                        </div>
+
+                        <div class="input-info-2">
+                            <label for="address" class="label">Địa chỉ: </label>
+                            @*<input type="text" name="address" class="input" id="address" placeholder="">*@
+                            @Html.TextBoxFor(m => m.DiaChi, new { @class = "input" })
+                        </div>
+                        <div class="gender">
+                            <span id="text_gender">Giới tính: </span>
+                            @*<input type="radio" name="gender" value="male" id="radio_male">
+                                <label for="male" id="label_male">Nam</label>
+                                <input type="radio" name="gender" value="female" id="radio_female">
+                                <label for="female" id="label_female">Nữ</label>*@
+                            @Html.RadioButtonFor(m => m.GioiTinh, 1)
+                            @Html.RadioButtonFor(m => m.GioiTinh, 0)
+                        </div>
+                    </div>
+                    <div class="col-sm" id="col_2">
+                        <div class="input-info-3">
+                            <label for="phone" class="label">Số điện thoại: </label>
+                            @*<input type="text" name="phone" class="input" id="phone" placeholder="">*@
+                            @Html.TextBoxFor(m => m.Sdt, new { @class = "input" })
+                        </div>
+                        <div class="input-info-4">
+                            <label for="idCard" class="label">Số CMND/CCCD: </label>
+                            @*<input type="text" name="idCard" class="input" id="idCard" placeholder="">*@
+                            @Html.TextBoxFor(m => m.CCCD, new { @class = "input" })
+                        </div>
+                        <div class="input-info-4">
+                            <label for="dropdown" class="label">Phòng ban:</label><br>
+                            @{ 
+                                var a = ((List<PhongBan>)ViewBag.listPhongBan).Select(x => new SelectListItem()
+                                {
+                                    Text = x.TenPhongBan,
+                                    Value = x.IdPhongBan.ToString(),
+                                    Selected = x.IdPhongBan == Model.IdPhongBan
+                                }).ToList();
+                            }
+                            @*<select id="dropdown">
+                                @{
+                                    foreach (var item in a)
+                                        {
+                                            <option value="@item.IdPhongBan">@item.TenPhongBan</option>
+                                        }
+                                }
+                            </select>*@
+                            @Html.DropDownListFor(x => x.IdPhongBan, a, new {id = "dropdown" })
+
+                        </div>
+                        <div class="input-info-4">
+                            <label for="dropdown_2" class="label">Chức vụ: </label>
+                            @{
+                                var b = ((List<ChucVu>)ViewBag.ListChucVu).Select(z => new SelectListItem()
+                                {
+                                    Text = z.TenChucVu,
+                                    Value = z.IdChucVu.ToString(),
+                                    Selected = z.IdChucVu == Model.IdChucVu
+                                }).ToList();
+                            }
+                            @Html.DropDownListFor(x => x.IdChucVu, b, new { id = "dropdown_2" })
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+<div id="workPage" class="page">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script src="~/Contents/profile.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

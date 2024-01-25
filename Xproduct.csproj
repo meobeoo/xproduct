@@ -251,7 +251,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\ForgotPassword.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
-    <Content Include="Views\User\Profile.cshtml" />
+    <Content Include="Views\User\ProfileUser.cshtml" />
     <Content Include="Views\User\Product.cshtml" />
     <Content Include="Views\User\Statistical.cshtml" />
     <Content Include="Views\User\Setting.cshtml" />
@@ -262,7 +262,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Data\Image\" />
     <Folder Include="Models\Partial\" />
   </ItemGroup>
   <ItemGroup>

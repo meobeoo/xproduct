@@ -47,8 +47,7 @@
         public int? GioiTinh { get; set; }
 
         
-        [StringLength(500)]
-        public string Image { get; set; }
+        public byte[] Image { get; set; }
 
         public virtual ChucVu ChucVu { get; set; }
         public virtual PhongBan PhongBan { get; set; }

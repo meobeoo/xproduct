@@ -168,8 +168,5 @@ namespace Xproduct.Controllers
                 "Hãy kiểm tra hộp thư để nhận mật khẩu mới!";
             return View();
         }
-
-
-
     }
 }

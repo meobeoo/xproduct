@@ -17,7 +17,7 @@
     <button class="info_option_2" onclick="showWorkPage()"><b>Công việc</b></button>
     <div class="mot_duong_ke"></div>
 
-    <div id="info_form">
+    
         <div class="containerr page show" id="infoPage">
             <div class="row">
                 <div class="col-sm" style="display: inline-block;">
@@ -28,90 +28,90 @@
                         <span id="span_2">@user.Email</span>
                     </div>
                 </div>
+                <div id="info_form">
+                    <div class="row">
+                        <div class="col-sm" id="col_1">
+                            <div class="input-info-1">
+                                <label for="username" class="label">Tên truy cập: <p class="redtext">*</p></label>
+                                @*<input type="text" name="username" class="input gray_bg" readonly>*@
+                                @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
+                            </div>
+                            <div class="input-info">
+                                <label for="username" class="label">Email: <p class="redtext">*</p></label>
+                                @*<input type="text" name="username" class="input gray_bg" readonly>*@
+                                @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
+                            </div>
+                            <div class="input-info">
+                                <label for="username" class="label">Họ và tên: <p class="redtext">*</p></label>
+                                @*<input type="text" name="username" class="input gray_bg" readonly>*@
+                                @Html.TextBoxFor(m => m.FullName, new { @class = "input gray_bg", @readonly = "readonly" })
+                            </div>
+                            <div id="datepicker" class="input-info" style="position: relative;">
+                                <label for="username" class="label">Ngày sinh: </label>
+                                <!--<input type="date" name="username" class="input"-->
+                                @*data-date-format="dd-mm-yy"*@
+                                <!--value="
+                    readonly>-->
+                                @Html.TextBox("NgaySinh", Model.NgaySinh?.ToString("yyyy-MM-dd"), new { @class = "input", type = "date" })
+                                <button type="button" id="select_date"></button>
+                            </div>
 
-                <div class="row">
-                    <div class="col-sm" id="col_1">
-                        <div class="input-info-1">
-                            <label for="username" class="label">Tên truy cập: <p class="redtext">*</p></label>
-                            @*<input type="text" name="username" class="input gray_bg" readonly>*@
-                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
-                        </div>
-                        <div class="input-info">
-                            <label for="username" class="label">Email: <p class="redtext">*</p></label>
-                            @*<input type="text" name="username" class="input gray_bg" readonly>*@
-                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
-                        </div>
-                        <div class="input-info">
-                            <label for="username" class="label">Họ và tên: <p class="redtext">*</p></label>
-                            @*<input type="text" name="username" class="input gray_bg" readonly>*@
-                            @Html.TextBoxFor(m => m.FullName, new { @class = "input gray_bg", @readonly = "readonly" })
-                        </div>
-                        <div id="datepicker" class="input-info" style="position: relative;">
-                            <label for="username" class="label">Ngày sinh: </label>
-                            <!--<input type="date" name="username" class="input"-->
-                            @*data-date-format="dd-mm-yy"*@
-                            <!--value="
-                            readonly>-->
-                            @Html.TextBox("NgaySinh", Model.NgaySinh?.ToString("yyyy-MM-dd"), new { @class = "input", type = "date" })
-                            <button type="button" id="select_date"></button>
-                        </div>
-
-                        <div class="input-info-2">
-                            <label for="address" class="label">Địa chỉ: </label>
-                            @*<input type="text" name="address" class="input" id="address" placeholder="">*@
-                            @Html.TextBoxFor(m => m.DiaChi, new { @class = "input" })
-                        </div>
-                        <div class="gender">
-                            <span id="text_gender">Giới tính: </span>
+                            <div class="input-info-2">
+                                <label for="address" class="label">Địa chỉ: </label>
+                                @*<input type="text" name="address" class="input" id="address" placeholder="">*@
+                                @Html.TextBoxFor(m => m.DiaChi, new { @class = "input" })
+                            </div>
+                            <div class="gender">
+                                <span id="text_gender">Giới tính: </span>
                                 @*<input type="radio" name="gender" value="male" id="radio_male">
-                                <label for="male" id="label_male">Nam</label>
-                                <input type="radio" name="gender" value="female" id="radio_female">
-                                <label for="female" id="label_female">Nữ</label>*@
-                            @Html.RadioButtonFor(m => m.GioiTinh, 1)
-                            @Html.RadioButtonFor(m => m.GioiTinh, 0)
+                        <label for="male" id="label_male">Nam</label>
+                        <input type="radio" name="gender" value="female" id="radio_female">
+                        <label for="female" id="label_female">Nữ</label>*@
+                                @Html.RadioButtonFor(m => m.GioiTinh, 1)
+                                @Html.RadioButtonFor(m => m.GioiTinh, 0)
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-sm" id="col_2">
-                        <div class="input-info-3">
-                            <label for="phone" class="label">Số điện thoại: </label>
-                            @*<input type="text" name="phone" class="input" id="phone" placeholder="">*@
-                            @Html.TextBoxFor(m => m.Sdt, new { @class = "input" })
-                        </div>
-                        <div class="input-info-4">
-                            <label for="idCard" class="label">Số CMND/CCCD: </label>
-                            @*<input type="text" name="idCard" class="input" id="idCard" placeholder="">*@
-                            @Html.TextBoxFor(m => m.CCCD, new { @class = "input" })
-                        </div>
-                        <div class="input-info-4">
-                            <label for="dropdown" class="label">Phòng ban:</label><br>
-                            <select id="dropdown">
-                                @{
-                                    var a = (List<PhongBan>)ViewBag.listPhongBan;
-                                    foreach (var item in a)
-                                    {
-                                        <option value="@item.IdPhongBan">@item.TenPhongBan</option>
+                        <div class="col-sm" id="col_2">
+                            <div class="input-info-3">
+                                <label for="phone" class="label">Số điện thoại: </label>
+                                @*<input type="text" name="phone" class="input" id="phone" placeholder="">*@
+                                @Html.TextBoxFor(m => m.Sdt, new { @class = "input" })
+                            </div>
+                            <div class="input-info-4">
+                                <label for="idCard" class="label">Số CMND/CCCD: </label>
+                                @*<input type="text" name="idCard" class="input" id="idCard" placeholder="">*@
+                                @Html.TextBoxFor(m => m.CCCD, new { @class = "input" })
+                            </div>
+                            <div class="input-info-4">
+                                <label for="dropdown" class="label">Phòng ban:</label><br>
+                                <select id="dropdown">
+                                    @{
+                                        var a = (List<PhongBan>)ViewBag.listPhongBan;
+                                        foreach (var item in a)
+                                        {
+                                            <option value="@item.IdPhongBan">@item.TenPhongBan</option>
+                                        }
                                     }
-                                }
-                            </select>
+                                </select>
 
-                        </div>
-                        <div class="input-info-4">
-                            <label for="dropdown_2" class="label">Chức vụ: </label>
-                            <select id="dropdown_2">
-                                @{
-                                    var b = (List<ChucVu>)ViewBag.listChucVu;
-                                    foreach (var item in b)
-                                    {
-                                        <option value="@item.IdChucVu">@item.TenChucVu</option>
+                            </div>
+                            <div class="input-info-4">
+                                <label for="dropdown_2" class="label">Chức vụ: </label>
+                                <select id="dropdown_2">
+                                    @{
+                                        var b = (List<ChucVu>)ViewBag.listChucVu;
+                                        foreach (var item in b)
+                                        {
+                                            <option value="@item.IdChucVu">@item.TenChucVu</option>
+                                        }
                                     }
-                                }
-                            </select>
+                                </select>
+                            </div>
                         </div>
                     </div>
+
                 </div>
-
             </div>
-        </div>
     </div>
 }
 <div id="workPage" class="page">

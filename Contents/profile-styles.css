@@ -530,10 +530,11 @@ body {
     margin-left: 87px;
 }
 
-#span_2 {
+.user_info_container #span_2 {
     height: 19px;
     font-size: 14px;
-    margin-left: 52px;
+    width: 100%;
+    text-align: center;
     margin-bottom: 20px;
 }
 

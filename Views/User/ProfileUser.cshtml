@@ -24,8 +24,8 @@
                 <div class="user_info_container">
                     <input type="file" name="fileToUpload" class="input_image" id="image" accept="image/*" />
                     <img class="user_big_avt" id="id_image" onclick="onFile()" src="@Model.ImageBase64">
-                    <span id="span_1"><b>@user.FullName</b></span>
-                    <span id="span_2">@user.Email</span>
+                    <center><span id="span_1"><b>@user.FullName</b></span></center>
+                    <center><span id="span_2">@user.Email</span></center>
                 </div>
             </div>
             <div id="info_form">
@@ -63,12 +63,15 @@
                         </div>
                         <div class="gender">
                             <span id="text_gender">Giới tính: </span>
-                            @*<input type="radio" name="gender" value="male" id="radio_male">
-                                <label for="male" id="label_male">Nam</label>
-                                <input type="radio" name="gender" value="female" id="radio_female">
-                                <label for="female" id="label_female">Nữ</label>*@
-                            @Html.RadioButtonFor(m => m.GioiTinh, 1)
-                            @Html.RadioButtonFor(m => m.GioiTinh, 0)
+                            <label id="label_male">
+                                @Html.RadioButtonFor(m => m.GioiTinh, 1, new { id = "gioiTinhNam" })
+                                Nam
+                            </label>
+                            <label id="label_female">
+                                @Html.RadioButtonFor(m => m.GioiTinh, 0, new { id = "gioiTinhNu" })
+                                Nữ
+                            </label>
+
                         </div>
                     </div>
                     <div class="col-sm" id="col_2">

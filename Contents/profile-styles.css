@@ -527,14 +527,12 @@ body {
     height: 21px;
     font-size: 16px;
     margin-bottom: 2px;
-    margin-left: 87px;
 }
 
 .user_info_container #span_2 {
     height: 19px;
     font-size: 14px;
     width: 100%;
-    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -564,6 +562,26 @@ body {
     bottom: 6px*/;
 /*    background-image: url('/source-img/calendar.png');*/
 /*    border: none;*/
+}
+
+.gender label {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.gender input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: #0277BD;
+}
+
+.gender #gioiTinhNam {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.gender #gioiTinhNu {
+    display: inline-block;
+    margin-left: 40px;
 }
 
 #text_gender {

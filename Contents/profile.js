@@ -75,9 +75,9 @@ document.getElementById('cancel').addEventListener('click', function () {
 
 document.getElementById('save').addEventListener('click', function () {
     // Lấy giá trị từ các trường input
-    var address = document.getElementById('address').value;
-    var phone = document.getElementById('phone').value;
-    var idCard = document.getElementById('idCard').value;
+    var address = document.getElementById('DiaChi').value;
+    var phone = document.getElementById('Sdt').value;
+    var idCard = document.getElementById('CCCD').value;
 
     // Kiểm tra điều kiện và hiển thị thông báo nếu có lỗi
     if (address.trim() === '') {

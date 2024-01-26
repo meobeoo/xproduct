@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+
 document.addEventListener("DOMContentLoaded", function () {
     var userManager = document.querySelector(".home_content .user_manager");
     var toggleButton = document.querySelector(".info_button");

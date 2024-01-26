@@ -55,6 +55,7 @@ namespace Xproduct.Controllers
                 item.CCCD = _dtoUser.CCCD;
                 item.DiaChi = _dtoUser.DiaChi;
                 item.Sdt = _dtoUser.Sdt;
+                item.GioiTinh = _dtoUser.GioiTinh;
 
 
                 var image = Request.Files.AllKeys.FirstOrDefault();

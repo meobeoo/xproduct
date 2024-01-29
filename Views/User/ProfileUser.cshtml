@@ -16,7 +16,6 @@
     <button class="info_option" onclick="showInfoPage()"><b>Thông tin</b></button>
     <button class="info_option_2" onclick="showWorkPage()"><b>Công việc</b></button>
     <div class="mot_duong_ke"></div>
-    @Html.Hidden("ggfg", Url.Action("Index", "UserController"))
 
 
     <div class="containerr page show" id="infoPage">
@@ -60,7 +59,7 @@
                         <div class="input-info-2">
                             <label for="address" class="label">Địa chỉ: </label>
                             @*<input type="text" name="address" class="input" id="address" placeholder="">*@
-                            @Html.TextBoxFor(m => m.DiaChi, new { @class = "input" })
+                            @Html.TextBoxFor(m => m.DiaChi, new { @class = "input", @id = "address" })
                         </div>
                         <div class="gender">
                             <span id="text_gender">Giới tính: </span>
@@ -84,12 +83,12 @@
                         <div class="input-info-3">
                             <label for="phone" class="label">Số điện thoại: </label>
                             @*<input type="text" name="phone" class="input" id="phone" placeholder="">*@
-                            @Html.TextBoxFor(m => m.Sdt, new { @class = "input" })
+                            @Html.TextBoxFor(m => m.Sdt, new { @class = "input", @id = "phone" })
                         </div>
                         <div class="input-info-4">
                             <label for="idCard" class="label">Số CMND/CCCD: </label>
                             @*<input type="text" name="idCard" class="input" id="idCard" placeholder="">*@
-                            @Html.TextBoxFor(m => m.CCCD, new { @class = "input" })
+                            @Html.TextBoxFor(m => m.CCCD, new { @class = "input", @id = "idCard" })
                         </div>
                         <div class="input-info-4">
                             <label for="dropdown" class="label">Phòng ban:</label><br>

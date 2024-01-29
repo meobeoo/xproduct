@@ -64,10 +64,8 @@ document.getElementById('cancel').addEventListener('click', function () {
         if (result.value) {
             // Nếu người dùng chọn "Có", thực hiện hành động hủy
             Swal.fire('Bạn đã hủy.', '', 'success');
-            var url = '@url.Action("Index", "UserController")'; 
-            var z = document.getElementById('address').value;
 
-            window.location.href = ;
+            window.location.href = '/User/Index';
             // Thêm logic hủy ở đây nếu cần
         } else {
             // Nếu người dùng chọn "Không", không thực hiện hành động gì cả
@@ -76,7 +74,10 @@ document.getElementById('cancel').addEventListener('click', function () {
     });
 });
 
-document.getElementById('save').addEventListener('click', function () {
+document.getElementById('save').addEventListener('click', function (event) {
+    // Prevent the default submit behavior
+    event.preventDefault();
+
     // Lấy giá trị từ các trường input
     var address = document.getElementById('address').value;
     var phone = document.getElementById('phone').value;
@@ -84,37 +85,31 @@ document.getElementById('save').addEventListener('click', function () {
 
     // Kiểm tra điều kiện và hiển thị thông báo nếu có lỗi
     if (address.trim() === '') {
-        alert('Vui lòng nhập địa chỉ.');
-        return;
-    }
-
-    var genderSelected = document.querySelector('input[name="gender"]:checked');
-    if (!genderSelected) {
-        alert('Vui lòng chọn giới tính.');
+        Swal.fire('Lỗi', 'Vui lòng nhập địa chỉ.', 'error');
         return;
     }
 
     if (phone.trim() === '') {
-        alert('Vui lòng nhập số điện thoại.');
+        Swal.fire('Lỗi', 'Vui lòng nhập số điện thoại.', 'error');
         return;
     } else if (!/^\d{10,12}$/.test(phone)) {
-        alert('Số điện thoại không hợp lệ. Vui lòng nhập từ 10 đến 12 chữ số.');
+        Swal.fire('Lỗi', 'Số điện thoại không hợp lệ. Vui lòng nhập từ 10 đến 12 chữ số.', 'error');
         return;
     }
 
     if (idCard.trim() === '') {
-        alert('Vui lòng nhập số CMND/CCCD.');
+        Swal.fire('Lỗi', 'Vui lòng nhập số CMND/CCCD.', 'error');
         return;
     } else if (!/^\d{9}$|^\d{12}$/.test(idCard)) {
-        alert('Số CMND/CCCD không hợp lệ. Vui lòng nhập 9 hoặc 12 chữ số.');
+        Swal.fire('Lỗi', 'Số CMND/CCCD không hợp lệ. Vui lòng nhập 9 hoặc 12 chữ số.', 'error');
         return;
     }
 
-
     // Nếu không có lỗi, có thể thực hiện các hành động khác ở đây
-    alert('Lưu thành công!');
-    // Thêm logic lưu dữ liệu ở đây nếu cần
+    Swal.fire('Thành công', 'Dữ liệu đã được lưu thành công!', 'success');
 });
+
+
 
 
 

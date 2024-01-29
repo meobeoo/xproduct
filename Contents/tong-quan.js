@@ -42,12 +42,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Hàm chuyển hướng đến trang ho-tro.html
 function goToSupportPage() {
-    window.location.href = 'ho-tro.html';
+    window.location.href = '/User/Support';
 }
 
 // Hàm chuyển hướng đến trang thong-bao.html
 function goToNotificationPage() {
-    window.location.href = 'thong-bao.html';
+    window.location.href = '/User/Notification';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

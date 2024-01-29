@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@using Xproduct.Models
+@{
+    User user = (User)Session["sesion"];
+    
+}
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -8,7 +15,7 @@
     @*@Styles.Render("~/Contents/styles.css")
         @Styles.Render("~/Contents/profile-styles.css")*@
     @*@Scripts.Render("~/bundles/modernizr")*@
-    <link  rel='stylesheet' href="~/Contents/tong-quan.css"/>
+    <link rel='stylesheet' href="~/Contents/tong-quan.css" />
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -76,8 +83,8 @@
             <div class="user_info">
                 <img class="show_avt" src="~/source-img/Group 22934.png">
                 <div class="user_name_and_mail">
-                    <span class="name"><b>Admin</b></span><br>
-                    <span class="mail">Email: admin@gmail.com</span>
+                    <span class="name"><b>@user.FullName</b></span><br>
+                    <span class="mail">Email: @user.Email</span>
                 </div>
             </div>
             <ul class="function_list">
@@ -117,7 +124,7 @@
     </div>
 
     @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")*@
+        @Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
     <script src="~/Contents/tong-quan.js"></script>
     <script src="~/Contents/profile.js"></script>

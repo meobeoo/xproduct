@@ -61,9 +61,18 @@ namespace Xproduct.Models.Dto
 
         public string ImageBase64
         {
+
             get
             {
-                return "data:image/jpeg;base64," + Convert.ToBase64String(Image);
+                if (Image != null)
+                {
+                    return "data:image/jpeg;base64," + Convert.ToBase64String(Image);
+                }
+                else
+                {
+                    return "";
+                }
+              
             }
         }
         public byte[] Image { get; set; }

@@ -119,19 +119,8 @@ var workButton = document.querySelector('.info_option_2');
 var infoPage = document.getElementById('infoPage');
 var workPage = document.getElementById('workPage');
 
-// Hiển thị trang Công việc mặc định
-infoPage.classList.add('show');
-infoButton.classList.add('active');
 
-// Hàm hiển thị trang Thông tin
-function showInfoPage() {
-    infoPage.classList.add('show');
-    workPage.classList.remove('show');
 
-    // Tùy chỉnh giao diện của các nút
-    infoButton.classList.add('active');
-    workButton.classList.remove('active');
-}
 function onFile() {
     $("#image").click();
 }
@@ -142,8 +131,21 @@ $("#image").on('change', function (evt) {
     }
 });
 
-// Hàm hiển thị trang Công việc
+// Hiển thị trang Công việc mặc định
+infoPage.classList.add('show');
+infoButton.classList.add('active');
+
+function showInfoPage() {
+
+    infoPage.classList.add('show');
+    workPage.classList.remove('show');
+
+    // Tùy chỉnh giao diện của các nút
+    infoButton.classList.add('active');
+    workButton.classList.remove('active');
+}
 function showWorkPage() {
+
     workPage.classList.add('show');
     infoPage.classList.remove('show');
 
@@ -152,14 +154,12 @@ function showWorkPage() {
     infoButton.classList.remove('active');
 }
 
-// Hàm chuyển hướng đến trang ho-tro.html
 function goToSupportPage() {
-    window.location.href = 'ho-tro.html';
+    window.location.href = '/User/Support';
 }
 
-// Hàm chuyển hướng đến trang thong-bao.html
 function goToNotificationPage() {
-    window.location.href = 'thong-bao.html';
+    window.location.href = '/User/Notification';
 }
 
 document.addEventListener('DOMContentLoaded', function () {

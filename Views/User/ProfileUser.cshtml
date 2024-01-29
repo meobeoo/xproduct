@@ -92,6 +92,7 @@
                         </div>
                         <div class="input-info-4">
                             <label for="dropdown" class="label">Phòng ban:</label><br>
+                            
                             @{
                                 var a = ((List<PhongBan>)ViewBag.listPhongBan).Select(x => new SelectListItem()
                                 {
@@ -99,16 +100,10 @@
                                     Value = x.IdPhongBan.ToString(),
                                     Selected = x.IdPhongBan == Model.IdPhongBan
                                 }).ToList();
-                            }
-                            @*<select id="dropdown">
-                                    @{
-                                        foreach (var item in a)
-                                            {
-                                                <option value="@item.IdPhongBan">@item.TenPhongBan</option>
-                                            }
-                                    }
-                                </select>*@
-                            @Html.DropDownListFor(x => x.IdPhongBan, a, new { id = "dropdown" })
+                            }     
+                            @Html.DropDownListFor(x => x.IdPhongBan, a, new { id = "dropdown" ,@disabled = "disabled" })
+                           @Html.HiddenFor(x => x.IdPhongBan)
+                            
 
                         </div>
                         <div class="input-info-4">
@@ -121,7 +116,8 @@
                                     Selected = z.IdChucVu == Model.IdChucVu
                                 }).ToList();
                             }
-                            @Html.DropDownListFor(x => x.IdChucVu, b, new { id = "dropdown_2" })
+                            @Html.DropDownListFor(x => x.IdChucVu, b, new { id = "dropdown_2", @disabled = "disabled" })
+                            @Html.HiddenFor(x => x.IdChucVu)
                         </div>
                     </div>
                 </div>

@@ -76,7 +76,7 @@ document.getElementById('cancel').addEventListener('click', function () {
 
 document.getElementById('save').addEventListener('click', function (event) {
     // Prevent the default submit behavior
-    event.preventDefault();
+/*    event.preventDefault();*/
 
     // Lấy giá trị từ các trường input
     var address = document.getElementById('address').value;

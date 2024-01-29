@@ -64,7 +64,10 @@ document.getElementById('cancel').addEventListener('click', function () {
         if (result.value) {
             // Nếu người dùng chọn "Có", thực hiện hành động hủy
             Swal.fire('Bạn đã hủy.', '', 'success');
-            window.location.href = 'tong-quan.html';
+            var url = '@url.Action("Index", "UserController")'; 
+            var z = document.getElementById('address').value;
+
+            window.location.href = ;
             // Thêm logic hủy ở đây nếu cần
         } else {
             // Nếu người dùng chọn "Không", không thực hiện hành động gì cả

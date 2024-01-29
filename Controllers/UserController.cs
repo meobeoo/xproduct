@@ -19,6 +19,50 @@ namespace Xproduct.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult ChangePasswordPage()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Notification()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Product()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Setting()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Statistical()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Support()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public ActionResult UpgradeAccount()
+        {
+
+            return View();
+        }
+        //=======================
+     
 
         [HttpGet]
         public ActionResult ProfileUser()

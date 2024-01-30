@@ -26,28 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// Hàm chuyển hướng đến trang ho-tro.html
 function goToSupportPage() {
-    window.location.href = 'ho-tro.html';
+    window.location.href = '/User/Support';
 }
 
-// Hàm chuyển hướng đến trang thong-bao.html
 function goToNotificationPage() {
-    window.location.href = 'thong-bao.html';
+    window.location.href = '/User/Notification';
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.querySelector('.sidebar');
-    const homeContent = document.querySelector('.home_content');
 
-    // Load sidebar state from Local Storage on page load
-    const sidebarState = localStorage.getItem('sidebarState');
-    if (sidebarState === 'thut') {
-        sidebar.classList.add('thut');
-        homeContent.classList.add('thut');
-    }
-
-    // You may want to add more code specific to this page
-
-    // Rest of your code for the new page
-});
+    

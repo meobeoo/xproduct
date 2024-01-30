@@ -162,20 +162,5 @@ function goToNotificationPage() {
     window.location.href = '/User/Notification';
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const sidebar = document.querySelector('.sidebar');
-    const homeContent = document.querySelector('.home_content');
-
-    // Load sidebar state from Local Storage on page load
-    const sidebarState = localStorage.getItem('sidebarState');
-    if (sidebarState === 'thut') {
-        sidebar.classList.add('thut');
-        homeContent.classList.add('thut');
-    }
-
-    // You may want to add more code specific to this page
-
-    // Rest of your code for the new page
-});
 
 

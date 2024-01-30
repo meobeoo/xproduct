@@ -14,9 +14,9 @@ body {
     top: 0;
     left: 0;
     height: 100%;
-    width: 240px;
+    width: 50px;
     background: #ffffff;
-    /* transition: ease-in-out 1s; */
+    transition: ease-in-out 1s;
     z-index: 9999;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -34,11 +34,11 @@ body {
 
 
     .sidebar.thut {
-        width: 50px;
+        width: 240px;
     }
 
         .sidebar.thut .logo {
-            display: none;
+            display: block;
         }
 
     .sidebar .logo {
@@ -47,6 +47,7 @@ body {
         height: 32px;
         left: 45px;
         top: 9px;
+        display: none;
     }
 
     .sidebar .nav_list {
@@ -141,16 +142,23 @@ body {
 .home_content {
     position: absolute;
     height: 100%;
-    width: calc(100% - 240px);
-    right: 0;
-    /* transition: ease-in-out 1s; */
+    width: calc(100% - 50px);
+    left: 50px;
+    transition: ease-in-out 1s;
     background-color: #f8fafb;
     z-index: 1;
 }
 
 .sidebar.thut + .home_content {
-    width: calc(100% - 50px);
+    width: calc(100% - 240px);
+    left: 240px;
 }
+
+.home_content.thut {
+    width: calc(100% - 240px);
+    left: 240px;
+}
+
 
 .home_content .tool_bar {
     width: 100%;

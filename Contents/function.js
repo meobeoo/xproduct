@@ -31,7 +31,7 @@ function checkSignup(event) {
         return 
     }
 
-    var checkpassword = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$/;
+    var checkpassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$/;
     if (!password.match(checkpassword)) {
         alert("Mật khẩu cần có ít nhất 1 chữ cái in hoa, 1 kí tự đặc biệt đặc biệt và 1 chữ số");
         return 

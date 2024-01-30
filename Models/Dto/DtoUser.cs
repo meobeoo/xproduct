@@ -18,7 +18,7 @@ namespace Xproduct.Models.Dto
 
 
         [StringLength(100)]
-        [RegularExpression(@"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}")]
+        [RegularExpression(@"^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$")]
         [Required(ErrorMessage = "Vui lòng nhập Email")]
         public string Email { get; set; }
 
@@ -30,7 +30,7 @@ namespace Xproduct.Models.Dto
 
 
         [StringLength(50)]
-        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,15}$")]
+        [RegularExpression(@"^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$")]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Vui lòng nhập Password")]
         public string Password { get; set; }

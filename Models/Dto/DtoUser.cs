@@ -59,21 +59,21 @@ namespace Xproduct.Models.Dto
 
         public int? GioiTinh { get; set; }
 
-        //public string ImageBase64
-        //{
-        //    get
-        //    {
-        //        if (Image != null)
-        //        {
-        //            return "data:image/jpeg;base64," + Convert.ToBase64String(Image);
-        //        }
-        //        else
-        //        {
-        //            return "";
-        //        }
-        //    }
-        //}
-        //public byte[] Image { get; set; }
+        public string ImageBase64
+        {
+            get
+            {
+                if (Image != null)
+                {
+                    return "data:image/jpeg;base64," + Convert.ToBase64String(Image);
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+        public byte[] Image { get; set; }
 
 
         public virtual ChucVu ChucVu { get; set; }

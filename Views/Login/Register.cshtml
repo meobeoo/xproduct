@@ -50,31 +50,31 @@
                     <div class="input-info">
                         <label for="name" class="label">Họ và tên </label>
                         @*<input type="text" name="name" id="nameInput" placeholder="">*@
-                  
-                            @Html.TextBoxFor(m => m.FullName)
-                       
+
+                        @Html.TextBoxFor(m => m.FullName)
+
                     </div>
                     <div class="input-info">
                         <label for="email" class="label">Email </label>
                         @*<input type="text" class="label" name="email" id="emailInput" placeholder="">*@
-                       
-                            @Html.TextBoxFor(m => m.Email, new { @class = "label" })
-                      
+
+                        @Html.TextBoxFor(m => m.Email, new { @class = "label" })
+
                     </div>
                     <div class="input-info">
                         <label for="phonenumber" class="label">Số điện thoại</label>
                         @*<input type="text" class="label" name="phonenumber" id="phonenumberInput" placeholder="">*@
-                     
-                            @Html.TextBoxFor(m => m.Sdt, new { @class = "label" })
-                        
+
+                        @Html.TextBoxFor(m => m.Sdt, new { @class = "label" })
+
                     </div>
                     <div class="input-info">
                         <label for="password" class="label">Mật khẩu</label>
                         <div class="password-container">
                             @*<input type="password" name="password" id="passwordInput" placeholder="">*@
-                           
-                             @Html.PasswordFor(m => m.Password)
-                            
+
+                            @Html.PasswordFor(m => m.Password)
+
                             <img src="~/source-img/eye-icon.png" id="eyeIcon" onclick="togglePassword()" class="eye-icon">
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         <label for="myCheckbox">Tôi đồng ý với các điều khoản</label>
                     </div>
 
-                    <button type="submit" class="btnsubmit"><b>Đăng kí</b></button>
+                    <button type="submit" class="btnsubmit" onclick="checkSignup(event)"><b>Đăng kí</b></button>
                 </div>
                 <center>
                     <div class="register-link">
@@ -99,6 +99,6 @@
             }
         </script>
 </body>
-    </html>
+</html>
+
    
-     

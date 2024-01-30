@@ -10,51 +10,52 @@ function checkSignup(event) {
     // Kiểm tra và hiển thị thông báo lỗi
     if (name, email, password, phoneNumber === "") {
         alert("Vui lòng nhập lại giá trị.");
-        return false
+        return 
     }
 
     var checkname = /^[a-zA-ZÀ-ỹẠ-ỵĂăÂâĐđÊêÔôƠơƯư\s']+$/;
     if (!name.match(checkname)) {
         alert("Tên không đúng định dạng vui lòng nhập lại");
-        return false
+        return 
     }
 
     var checkemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!email.match(checkemail)) {
         alert("Email không đúng định dạng. Vui lòng nhập lại giá trị.");
-        return false
+        return
     }
 
     var checknumber = /^0\d{9}$/;
     if (!phoneNumber.match(checknumber)) {
         alert("Vui lòng nhập số điện thoại hợp lệ.");
-        return false
+        return
     }
 
     var checkpassword = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$/;
     if (!password.match(checkpassword)) {
         alert("Mật khẩu cần có ít nhất 1 chữ cái in hoa, 1 kí tự đặc biệt đặc biệt và 1 chữ số");
-        return false
+        return 
     }
 
     if (password.length < 8) {
         alert("Mật khẩu quá ngắn. Vui lòng nhập mật khẩu có ít nhất 8 kí tự.");
-        return false
+        return 
     }
 
     if (password.length > 20) {
         alert("Mật khẩu quá dài. Vui lòng nhập mật khẩu có tối đa 20 kí tự");
-        return false
+        return 
     }
 
      if (!document.getElementById("myCheckbox").checked) {
          alert("Bạn chưa đồng ý với điều khoản của chúng tôi.");
-         return false
+         return 
     }
     alert("Bạn đã chắc chắn với thông tin tạo mới tài khoản?");
    ///* window.location.href = '/login/index';*/
    return true;
 }
+
 
 //function validateFullname(name) {
 //    const fullNamRegex = /^[a-zA-ZÀ-ỹẠ-ỵĂăÂâĐđÊêÔôƠơƯư\s']+$/;

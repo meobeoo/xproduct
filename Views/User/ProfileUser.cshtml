@@ -1,12 +1,49 @@
 ﻿@using Xproduct.Models
 @model Xproduct.Models.Dto.DtoUser
 @{
-    Layout = "~/Views/Shared/_Layout.cshtml"; 
+    Layout = "~/Views/Shared/_Layout.cshtml";
     User user = (User)Session["sesion"];
 }
 @Styles.Render("~/Contents/profile-styles.css")
 @using (Html.BeginForm("ProfileUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    <div class="sidebar">
+        <div class="logo-content">
+            <btn id="btn"></btn>
+            <img src="~/source-img/logo-tong-quan.png" class="logo">
+        </div>
+        <div class="mot_duong_ke"></div>
+        <ul class="nav_list">
+            <li class="selected">
+                <a href="@Url.Action("Index","User")">
+                    <div class="highlight active"></div>
+                    <img src="~/source-img/Group 20895.png" class="icon" id="first">
+                    <span class="links_name active">Tổng quan</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Product","User")">
+                    <div class="highlight"></div>
+                    <img src="~/source-img/Group 20867-off.png" class="icon">
+                    <span class="links_name">Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Statistical","User")">
+                    <div class="highlight"></div>
+                    <img src="~/source-img/Group 20872-off.png" class="icon">
+                    <span class="links_name">Thống kê</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Setting","User")">
+                    <div class="highlight"></div>
+                    <img src="~/source-img/Group 20873-off.png" class="icon">
+                    <span class="links_name">Thiết lập</span>
+                </a>
+            </li>
+        </ul>
+    </div>
     @Html.HiddenFor(x => x.idUser)
     <div class="tool_bar_2">
         <span class="title"><b>Hồ sơ cá nhân</b></span>
@@ -92,7 +129,7 @@
                         </div>
                         <div class="input-info-4">
                             <label for="dropdown" class="label">Phòng ban:</label><br>
-                            
+
                             @{
                                 var a = ((List<PhongBan>)ViewBag.listPhongBan).Select(x => new SelectListItem()
                                 {
@@ -100,10 +137,10 @@
                                     Value = x.IdPhongBan.ToString(),
                                     Selected = x.IdPhongBan == Model.IdPhongBan
                                 }).ToList();
-                            }     
-                            @Html.DropDownListFor(x => x.IdPhongBan, a, new { id = "dropdown" ,@disabled = "disabled" })
-                           @Html.HiddenFor(x => x.IdPhongBan)
-                            
+                            }
+                            @Html.DropDownListFor(x => x.IdPhongBan, a, new { id = "dropdown", @disabled = "disabled" })
+                            @Html.HiddenFor(x => x.IdPhongBan)
+
 
                         </div>
                         <div class="input-info-4">

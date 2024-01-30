@@ -2,8 +2,50 @@
     Layout = "~/Views/Shared/_Layout.cshtml"; ;
 }
 
+@Styles.Render("~/Contents/tong-quan.css")
 
+<body>
+    <div class="sidebar">
+        <div class="logo-content">
+            <btn id="btn"></btn>
+            <img src="~/source-img/logo-tong-quan.png" class="logo">
+        </div>
+        <div class="mot_duong_ke"></div>
+        <ul class="nav_list">
+            <li class="selected">
+                <a href="@Url.Action("Index","User")">
+                    <div class="highlight"></div>
+                    <img src="~/source-img/Group 20895-off.png" class="icon" id="first">
+                    <span class="links_name">Tổng quan</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Product","User")">
+                    <div class="highlight"></div>
+                    <img src="~/source-img/Group 20867-off.png" class="icon">
+                    <span class="links_name">Product</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Statistical","User")">
+                    <div class="highlight"></div>
+                    <img src="~/source-img/Group 20872-off.png" class="icon">
+                    <span class="links_name">Thống kê</span>
+                </a>
+            </li>
+            <li>
+                <a href="@Url.Action("Setting","User")">
+                    <div class="highlight active"></div>
+                    <img src="~/source-img/Group 20873.png" class="icon">
+                    <span class="links_name active">Thiết lập</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
 <div>
     <h1>Setting</h1>
 </div>
+<script src="~/Contents/tong-quan.js?vs=@Guid.NewGuid()"></script>
+
 

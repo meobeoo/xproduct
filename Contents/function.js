@@ -1,5 +1,5 @@
 function checkSignup(event) {
-    /*event.preventDefault();*/
+
 
     // Lấy giá trị từ các trường input
     const name = document.getElementById("FullName").value.trim();
@@ -8,7 +8,7 @@ function checkSignup(event) {
     const password = document.getElementById("Password").value.trim();
 
     // Kiểm tra và hiển thị thông báo lỗi
-    if (name, email, password, phoneNumber === "") {
+    if (name === "" || email === "" || password === "" || phoneNumber === "") {
         alert("Vui lòng nhập lại giá trị.");
         return 
     }
@@ -16,19 +16,19 @@ function checkSignup(event) {
     var checkname = /^[a-zA-ZÀ-ỹẠ-ỵĂăÂâĐđÊêÔôƠơƯư\s']+$/;
     if (!name.match(checkname)) {
         alert("Tên không đúng định dạng vui lòng nhập lại");
-        return 
+        return
     }
 
     var checkemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!email.match(checkemail)) {
         alert("Email không đúng định dạng. Vui lòng nhập lại giá trị.");
-        return
+        return 
     }
 
     var checknumber = /^0\d{9}$/;
     if (!phoneNumber.match(checknumber)) {
         alert("Vui lòng nhập số điện thoại hợp lệ.");
-        return
+        return 
     }
 
     var checkpassword = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$/;
@@ -52,7 +52,6 @@ function checkSignup(event) {
          return 
     }
     alert("Bạn đã chắc chắn với thông tin tạo mới tài khoản?");
-   ///* window.location.href = '/login/index';*/
    return true;
 }
 
@@ -96,7 +95,10 @@ $(document).ready(function () {
     });
 
     $('#FormRegister').on('submit', (e) => {
-        checksignup(e);
+        if (!errorShown && !checkSignup(e)) {
+            e.preventDefault(); // Ngăn chặn việc submit form
+            errorShown = true; // Đánh dấu đã hiển thị thông báo lỗi
+        }
     })
     $('#FormLogin').on('submit', (e) => {
         checkLogin(e);

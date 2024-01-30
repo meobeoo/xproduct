@@ -1,17 +1,9 @@
 ﻿
-
 document.addEventListener('DOMContentLoaded', function () {
     // Get the necessary elements
     const sidebar = document.querySelector('.sidebar');
     const btn = document.getElementById('btn');
     const homeContent = document.querySelector('.home_content');
-
-    // Load sidebar state from Local Storage on page load
-    const sidebarState = localStorage.getItem('sidebarState');
-    if (sidebarState === 'thut') {
-        sidebar.classList.add('thut');
-        homeContent.classList.add('thut');
-    }
 
     // Add click event listener to the button
     btn.addEventListener('click', function () {
@@ -21,14 +13,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Toggle the width and left position of homeContent
         homeContent.classList.toggle('thut');
 
-        // Save the sidebar state to Local Storage
-        const newSidebarState = sidebar.classList.contains('thut') ? 'thut' : '';
-        localStorage.setItem('sidebarState', newSidebarState);
-
         // You may want to add more styling adjustments or animations as needed
     });
 });
-
 
 
 document.addEventListener("DOMContentLoaded", function () {

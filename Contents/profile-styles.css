@@ -786,19 +786,25 @@ body {
     }
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 375px) {
     .home_content {
         position: absolute;
         height: 100%;
-        width: calc(100% - 230px);
-        right: -10px;
+        width: calc(100% - 50px);
+        left: 50px;
         transition: ease-in-out 1s;
         background-color: #f8fafb;
         z-index: 1;
     }
 
     .sidebar.thut + .home_content {
-        width: calc(100% - 40px);
+        width: calc(100% - 240px);
+        left: 240px;
+    }
+
+    .home_content.thut {
+        width: calc(100% - 240px);
+        left: 240px;
     }
 }
 

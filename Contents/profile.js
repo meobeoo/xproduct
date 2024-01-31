@@ -93,11 +93,11 @@ document.getElementById('save').addEventListener('click', function (event) {
     //    return;
     //}
 
-    //if (phone.trim() === '') {
-    //    Swal.fire('Lỗi', 'Vui lòng nhập số điện thoại.', 'error');
-    //    return;
-    //}
-    if (!/^0\d{9}$/.test(phone)) {
+    if (phone.trim() === '') {
+        Swal.fire('Lỗi', 'Vui lòng nhập số điện thoại.', 'error');
+        return;
+    }
+    if (!/^(0\d{9})$/.test(phone)) {
         Swal.fire('Lỗi', 'Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng.', 'error');
         return;
     }
@@ -106,7 +106,7 @@ document.getElementById('save').addEventListener('click', function (event) {
     //    Swal.fire('Lỗi', 'Vui lòng nhập số CMND/CCCD.', 'error');
     //    return;
     //}
-    if (!/^\d{9}$|^\d{12}$/.test(idCard)) {
+    if (!/^\d{9,12}$|^$/.test(idCard)) {
         Swal.fire('Lỗi', 'Số CMND/CCCD không hợp lệ. Vui lòng nhập đúng thông tin định dạng.', 'error');
         return;
     }

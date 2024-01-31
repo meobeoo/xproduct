@@ -76,7 +76,7 @@ document.getElementById('cancel').addEventListener('click', function () {
 
 document.getElementById('save').addEventListener('click', function (event) {
     // Prevent the default submit behavior
-/*    event.preventDefault();*/
+    event.preventDefault();
 
     // Lấy giá trị từ các trường input
     var address = document.getElementById('address').value;
@@ -87,13 +87,16 @@ document.getElementById('save').addEventListener('click', function (event) {
     if (address.trim() === '') {
         Swal.fire('Lỗi', 'Vui lòng nhập địa chỉ.', 'error');
         return;
+    } else if (!/^[a-zA-ZÀ-ỹẠ-ỵĂăÂâĐđÊêÔôƠơƯư\s'0-9']+$/.test(address)) {
+        Swal.fire('Lỗi', 'Địa chỉ không hợp lệ. Vui lòng nhập đúng định dạng.', 'error');
+        return;
     }
 
     if (phone.trim() === '') {
         Swal.fire('Lỗi', 'Vui lòng nhập số điện thoại.', 'error');
         return;
-    } else if (!/^\d{10,12}$/.test(phone)) {
-        Swal.fire('Lỗi', 'Số điện thoại không hợp lệ. Vui lòng nhập từ 10 đến 12 chữ số.', 'error');
+    } else if (!/^0\d{9}$/.test(phone)) {
+        Swal.fire('Lỗi', 'Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng.', 'error');
         return;
     }
 
@@ -101,16 +104,14 @@ document.getElementById('save').addEventListener('click', function (event) {
         Swal.fire('Lỗi', 'Vui lòng nhập số CMND/CCCD.', 'error');
         return;
     } else if (!/^\d{9}$|^\d{12}$/.test(idCard)) {
-        Swal.fire('Lỗi', 'Số CMND/CCCD không hợp lệ. Vui lòng nhập 9 hoặc 12 chữ số.', 'error');
+        Swal.fire('Lỗi', 'Số CMND/CCCD không hợp lệ. Vui lòng nhập đúng thông tin định dạng.', 'error');
         return;
     }
 
     // Nếu không có lỗi, có thể thực hiện các hành động khác ở đây
     Swal.fire('Thành công', 'Dữ liệu đã được lưu thành công!', 'success');
+    document.getElementById('FormProfileUser').submit();
 });
-
-
-
 
 
 // Lấy các phần tử button và div của trang

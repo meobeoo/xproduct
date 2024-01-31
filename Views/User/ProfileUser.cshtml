@@ -5,7 +5,7 @@
     User user = (User)Session["sesion"];
 }
 @Styles.Render("~/Contents/profile-styles.css")
-@using (Html.BeginForm("ProfileUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm("ProfileUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" , id = "FormProfileUser" }))
 {
     <div class="sidebar">
         <div class="logo-content">
@@ -89,14 +89,14 @@
                             @*data-date-format="dd-mm-yy"*@
                             <!--value="
                             readonly>-->
-                            @Html.TextBox("NgaySinh", Model.NgaySinh?.ToString("yyyy-MM-dd"), new { @class = "input", type = "date" })
+                            @Html.TextBox("NgaySinh", Model.NgaySinh?.ToString("dd/MM/yyyy"), new { @class = "input", type = "date" })
 
                         </div>
 
                         <div class="input-info-2">
                             <label for="address" class="label">Địa chỉ: </label>
                             @*<input type="text" name="address" class="input" id="address" placeholder="">*@
-                            @Html.TextBoxFor(m => m.DiaChi, new { @class = "input", @id = "address" })
+                            @Html.TextBoxFor(m => m.DiaChi, new { @class = "input", id = "address" })
                         </div>
                         <div class="gender">
                             <span id="text_gender">Giới tính: </span>
@@ -120,12 +120,12 @@
                         <div class="input-info-3">
                             <label for="phone" class="label">Số điện thoại: </label>
                             @*<input type="text" name="phone" class="input" id="phone" placeholder="">*@
-                            @Html.TextBoxFor(m => m.Sdt, new { @class = "input", @id = "phone" })
+                            @Html.TextBoxFor(m => m.Sdt, new { @class = "input", id = "phone" })
                         </div>
                         <div class="input-info-4">
                             <label for="idCard" class="label">Số CMND/CCCD: </label>
                             @*<input type="text" name="idCard" class="input" id="idCard" placeholder="">*@
-                            @Html.TextBoxFor(m => m.CCCD, new { @class = "input", @id = "idCard" })
+                            @Html.TextBoxFor(m => m.CCCD, new { @class = "input", id = "idCard" })
                         </div>
                         <div class="input-info-4">
                             <label for="dropdown" class="label">Phòng ban:</label><br>

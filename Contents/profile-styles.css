@@ -308,9 +308,18 @@ body {
     font-size: 14px;
 }
 
-    .home_content .user_manager .user_info .user_name_and_mail .mail {
-        color: #707070;
-    }
+.home_content .user_manager .user_info .user_name_and_mail .mail {
+    color: #707070;
+    white-space: nowrap;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.home_content .user_manager .user_info .user_name_and_mail .mail:hover {
+    width: auto;
+    white-space: normal;
+}
 
 .home_content .user_manager .function_list li {
     position: relative;

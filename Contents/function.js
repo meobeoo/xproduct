@@ -10,49 +10,58 @@ function checkSignup(event) {
     // Kiểm tra và hiển thị thông báo lỗi
     if (name === "" || email === "" || password === "" || phoneNumber === "") {
         alert("Vui lòng nhập lại giá trị.");
+        event.preventDefault();
         return 
     }
 
     var checkname = /^[a-zA-ZÀ-ỹẠ-ỵĂăÂâĐđÊêÔôƠơƯư\s']+$/;
     if (!name.match(checkname)) {
         alert("Tên không đúng định dạng vui lòng nhập lại");
+        event.preventDefault();
         return
     }
 
     var checkemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!email.match(checkemail)) {
         alert("Email không đúng định dạng. Vui lòng nhập lại giá trị.");
+        event.preventDefault();
         return 
     }
 
     var checknumber = /^0\d{9}$/;
     if (!phoneNumber.match(checknumber)) {
         alert("Vui lòng nhập số điện thoại hợp lệ.");
+        event.preventDefault();
         return 
     }
 
     var checkpassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$/;
     if (!password.match(checkpassword)) {
         alert("Mật khẩu cần có ít nhất 1 chữ cái in hoa, 1 kí tự đặc biệt đặc biệt và 1 chữ số");
+        event.preventDefault();
         return 
     }
 
     if (password.length < 8) {
         alert("Mật khẩu quá ngắn. Vui lòng nhập mật khẩu có ít nhất 8 kí tự.");
+        event.preventDefault();
         return 
     }
 
     if (password.length > 20) {
         alert("Mật khẩu quá dài. Vui lòng nhập mật khẩu có tối đa 20 kí tự");
+        event.preventDefault();
         return 
     }
 
      if (!document.getElementById("myCheckbox").checked) {
          alert("Bạn chưa đồng ý với điều khoản của chúng tôi.");
+         event.preventDefault();
          return 
     }
+
     alert("Bạn đã chắc chắn với thông tin tạo mới tài khoản?");
-   return true;
+
 }
 
 
@@ -128,22 +137,26 @@ function checkLogin(event) {
     var checkemail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (!username.match(checkemail)) {
         alert("Username phải có dạng email.");
+        event.preventDefault();
         return
     }
 
     var checkpassword = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[0-9]).*$/;
     if (!password.match(checkpassword)) {
         alert("Mật khẩu cần có ít nhất 1 chữ cái in hoa, 1 kí tự đặc biệt đặc biệt và 1 chữ số");
+        event.preventDefault();
         return
     }
 
     if (password.length < 8) {
         alert("Mật khẩu quá ngắn. Vui lòng nhập mật khẩu có ít nhất 8 kí tự.");
+        event.preventDefault();
         return
     }
 
     if (password.length > 20) {
         alert("Mật khẩu quá dài. Vui lòng nhập mật khẩu có tối đa 20 kí tự");
+        event.preventDefault();
         return
     }
 }

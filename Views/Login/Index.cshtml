@@ -68,6 +68,7 @@
                     <div id="divforgotpw">
                         <a href="@Url.Action("ForgotPassword", "Login")" class="href">Quên mật khẩu?</a>
                     </div>
+                    @Html.ValidationSummary()
                     <button type="submit" id="login-button" onclick="checkLogin(event)"><b>Đăng nhập</b></button>
                 </div>
                 <center>

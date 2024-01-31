@@ -28,6 +28,7 @@ namespace Xproduct.Controllers
             && s.Password.Equals(_user.Password)).FirstOrDefault();
             if (check == null)
             {
+                ViewBag.IsValid = false;
                 ViewBag.b = "Password hoặc Username sai!\r\n" +
                "Vui lòng nhập lại";
                 return View("Index", _user);

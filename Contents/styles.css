@@ -7,9 +7,7 @@
     justify-content: center;
     height: 100vh;
 }
-.validation-summary-errors{
-    display: none;
-}
+
 
 .login-container {
     width: 100vw;

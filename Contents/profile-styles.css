@@ -148,6 +148,7 @@ body {
     transition: ease-in-out 1s;
     background-color: #f8fafb;
     z-index: 1;
+    overflow-y: auto;
 }
 
 .sidebar.thut + .home_content {

@@ -84,26 +84,29 @@ document.getElementById('save').addEventListener('click', function (event) {
     var idCard = document.getElementById('idCard').value;
 
     // Kiểm tra điều kiện và hiển thị thông báo nếu có lỗi
-    if (address.trim() === '') {
-        Swal.fire('Lỗi', 'Vui lòng nhập địa chỉ.', 'error');
-        return;
-    } else if (!/^[a-zA-ZÀ-ỹẠ-ỵĂăÂâĐđÊêÔôƠơƯư\s'0-9']+$/.test(address)) {
-        Swal.fire('Lỗi', 'Địa chỉ không hợp lệ. Vui lòng nhập đúng định dạng.', 'error');
-        return;
-    }
+    //if (address.trim() === '') {
+    //    Swal.fire('Lỗi', 'Vui lòng nhập địa chỉ.', 'error');
+    //    return;
+    //}
+    //if (!/^[a-zA-ZÀ-ỹẠ-ỵĂăÂâĐđÊêÔôƠơƯư\s'0-9'!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/.test(address)) {
+    //    Swal.fire('Lỗi', 'Địa chỉ không hợp lệ. Vui lòng nhập đúng định dạng.', 'error');
+    //    return;
+    //}
 
-    if (phone.trim() === '') {
-        Swal.fire('Lỗi', 'Vui lòng nhập số điện thoại.', 'error');
-        return;
-    } else if (!/^0\d{9}$/.test(phone)) {
+    //if (phone.trim() === '') {
+    //    Swal.fire('Lỗi', 'Vui lòng nhập số điện thoại.', 'error');
+    //    return;
+    //}
+    if (!/^0\d{9}$/.test(phone)) {
         Swal.fire('Lỗi', 'Số điện thoại không hợp lệ. Vui lòng nhập đúng định dạng.', 'error');
         return;
     }
 
-    if (idCard.trim() === '') {
-        Swal.fire('Lỗi', 'Vui lòng nhập số CMND/CCCD.', 'error');
-        return;
-    } else if (!/^\d{9}$|^\d{12}$/.test(idCard)) {
+    //if (idCard.trim() === '') {
+    //    Swal.fire('Lỗi', 'Vui lòng nhập số CMND/CCCD.', 'error');
+    //    return;
+    //}
+    if (!/^\d{9}$|^\d{12}$/.test(idCard)) {
         Swal.fire('Lỗi', 'Số CMND/CCCD không hợp lệ. Vui lòng nhập đúng thông tin định dạng.', 'error');
         return;
     }

@@ -150,7 +150,7 @@ function togglePassword() {
 }
 
 function redirectToLogin() {
-    window.location.href = 'Index.cshtml';
+    window.location.href = '/Login/Index';
 }
 
 //function validateEmail(email) {
@@ -158,14 +158,20 @@ function redirectToLogin() {
 //    return emailRegex.test(email);
 //}
 
-function validateForm() {
-    const emailInput = document.getElementById("Email").value;
-    if (emailInput.trim() === "" || !validateEmail(emailInput)) {
-        alert("Vui lòng nhập một địa chỉ email hợp lệ.");
-        return false;
-    }
+function isValidEmail(email) {
+    // Biểu thức chính quy để kiểm tra định dạng email
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
 
-    return true;
+function checkEmail(event) {
+    var emailInput = document.getElementById('input-mail');
+    var emailValue = emailInput.value.trim();
+
+    if (!isValidEmail(emailValue)) {
+        alert('Định dạng email không hợp lệ');
+        event.preventDefault(); 
+    }
 }
 function closeForm() {
     $('.login-container').addClass('hidden');

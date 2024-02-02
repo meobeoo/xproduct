@@ -494,11 +494,10 @@ body {
     border-radius: 4px;
     padding: 5px;
     font-size: 14px;
+    background-color: #ffffff;
 }
 
-.gray_bg {
-    background-color: #F3F4F6;
-}
+
 
 .gender {
     position: relative;
@@ -824,4 +823,30 @@ body {
 
 #infoPage.show, #workPage.show {
     display: block;
+}
+
+#datepicker {
+    background-color: #ffffff;
+}
+
+.form-control {
+    background-color: #ffffff;
+}
+
+.form-control {
+    background-color: #ffffff;
+}
+
+.input-group-text {
+    background-color: #ffffff;
+}
+
+.input[readonly] {
+    background-color: #ffffff;
+    border: 1px solid #DEDEDF;
+    border-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #ffffff;
 }

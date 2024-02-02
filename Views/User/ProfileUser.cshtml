@@ -5,7 +5,7 @@
     User user = (User)Session["sesion"];
 }
 @Styles.Render("~/Contents/profile-styles.css")
-@using (Html.BeginForm("ProfileUser", "User", FormMethod.Post, new { enctype = "multipart/form-data" , id = "FormProfileUser" }))
+@using (Html.BeginForm("ProfileUser", "User", FormMethod.Post, new { enctype = "multipart/form-data", id = "FormProfileUser" }))
 {
     <div class="sidebar">
         <div class="logo-content">
@@ -84,14 +84,18 @@
                             @Html.TextBoxFor(m => m.FullName, new { @class = "input gray_bg", @readonly = "readonly" })
                         </div>
                         <div id="datepicker" class="input-info" style="position: relative;">
-                            <label for="username" class="label">Ngày sinh: </label>
-                            <!--<input type="date" name="username" class="input"-->
-                            @*data-date-format="dd-mm-yy"*@
-                            <!--value="
-                            readonly>-->
-                            @Html.TextBox("NgaySinh", Model.NgaySinh?.ToString("yyyy-MM-dd"), new { @class = "input", type = "date" })
-
+                            <label for="NgaySinh" class="label">Ngày sinh: </label>
+                            <div class="input-group">
+                                @Html.TextBox("NgaySinh", Model.NgaySinh, new { @class = "input form-control", @id = "NgaySinh", @readonly = "readonly", @style="border-radius: 4px" })
+                                <div class="input-group-append" style="border: none; position: absolute; right: 0;">
+                                    <span class="input-group-text" id="icon-calendar" style="border: none; border-bottom: none; position: absolute; right: 1px; top: 1px; width: 100%; height: 100%">
+                                        <img src="~/source-img/calendar.png" id="img-calendar" style="width: 14px; height: 14px; position: absolute; right: 10px; top: 10px;">
+                                    </span>
+                                </div>
+                            </div>
                         </div>
+
+
 
                         <div class="input-info-2">
                             <label for="address" class="label">Địa chỉ: </label>
@@ -179,3 +183,36 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <!-- Slick Carousel -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+<style>
+    #datepicker {
+        background-color: #ffffff; 
+
+    }
+
+    .form-control {
+        background-color: #ffffff; 
+    }
+
+
+
+    .input-group-text {
+        background-color: #ffffff; 
+        border: 1px solid #ced4da; 
+    }
+
+    .input[readonly]{
+        background-color: #ffffff; 
+    }
+
+
+</style>

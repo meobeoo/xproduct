@@ -55,7 +55,8 @@ namespace Xproduct.Models.Dto
         public int? IdPhongBan { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? NgaySinh { get; set; }
+        [DisplayFormat(DataFormatString = "{dd/MM/yyyy}", ApplyFormatInEditMode = true)]
+        public string NgaySinh { get; set; }
 
         public int? GioiTinh { get; set; }
 

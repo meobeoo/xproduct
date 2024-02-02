@@ -114,9 +114,17 @@ document.getElementById('save').addEventListener('click', function (event) {
         event.preventDefault();
     }
 
-    // Nếu không có lỗi, có thể thực hiện các hành động khác ở đây
-    Swal.fire('Thành công', 'Dữ liệu đã được lưu thành công!', 'success');
-    document.getElementById('FormProfileUser').submit();
+    Swal.fire({
+        title: 'Thành công',
+        text: 'Dữ liệu đã được lưu thành công!',
+        icon: 'success',
+        showCancelButton: false,
+        confirmButtonText: 'OK',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById('FormProfileUser').submit();
+        }
+    });
 });
 
 
@@ -169,5 +177,24 @@ function goToNotificationPage() {
     window.location.href = '/User/Notification';
 }
 
+$(document).ready(function () {
+    $('#NgaySinh').datepicker({
+        format: 'dd/mm/yyyy', // Định dạng ngày tháng nếu cần
+        todayHighlight: true,
+        autoclose: true,
+    });
+});
+$(document).ready(function () {
+    // Khi click vào biểu tượng lịch
+    $('#icon-calendar').click(function () {
+        // Mở datepicker
+        $('#NgaySinh').datepicker('show');
+    });
 
-
+    // Kích hoạt datepicker
+    $('#NgaySinh').datepicker({
+        format: 'dd/mm/yyyy', // Định dạng ngày tháng nếu cần
+        todayHighlight: true,
+        autoclose: true,
+    });
+});

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -62,13 +63,13 @@ namespace Xproduct.Controllers
             return View();
         }
         //=======================
-     
+
 
         [HttpGet]
         public ActionResult ProfileUser()
         {
             User user = (User)Session["sesion"];
-            var a = _db.Users.Where(x => x.idUser == user.idUser).Select(x => new DtoUser()
+            var a = _db.Users.Where(x => x.idUser == user.idUser).ToList().Select(x => new DtoUser()
             {
                 idUser = x.idUser,
                 FullName = x.FullName,
@@ -80,7 +81,7 @@ namespace Xproduct.Controllers
                 IdChucVu = x.IdChucVu,
                 CCCD = x.CCCD,
                 Image = x.Image,
-                NgaySinh = x.NgaySinh,
+                NgaySinh = x.NgaySinh.HasValue ? x.NgaySinh.Value.ToString("dd/MM/yyyy") : null,
                 DiaChi = x.DiaChi
             }).FirstOrDefault();
             ViewBag.listPhongBan = _db.PhongBans.ToList();
@@ -93,7 +94,14 @@ namespace Xproduct.Controllers
             var item = _db.Users.Find(_dtoUser.idUser);
             if (item != null)
             {
-                item.NgaySinh = _dtoUser.NgaySinh;
+                if (string.IsNullOrEmpty(_dtoUser.NgaySinh))
+                {
+                    item.NgaySinh = null;
+                }
+                else
+                {
+                    item.NgaySinh = DateTime.ParseExact(_dtoUser.NgaySinh, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                }
                 item.IdPhongBan = _dtoUser.IdPhongBan;
                 item.IdChucVu = _dtoUser.IdChucVu;
                 item.CCCD = _dtoUser.CCCD;

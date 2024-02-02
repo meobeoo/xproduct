@@ -198,3 +198,7 @@ $(document).ready(function () {
         autoclose: true,
     });
 });
+
+function selectRadio(radioId) {
+    document.getElementById(radioId).click();
+}

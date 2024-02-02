@@ -109,19 +109,16 @@
                         </div>
                         <div class="gender">
                             <span id="text_gender">Giới tính: </span>
-                            @*<label id="label_male">
-
-                                </label>*@
-                            <div id="label_male">
+                            <div id="male">
+                                <label id="label_male" for="gioiTinhNam" onclick="selectRadio('gioiTinhNam')">Nam</label>
                                 @Html.RadioButtonFor(m => m.GioiTinh, 1, new { id = "gioiTinhNam" })
-                                Nam
-                                @Html.RadioButtonFor(m => m.GioiTinh, 0, new { id = "gioiTinhNu" })
-                                Nữ
                             </div>
 
+                            <div id="female">
+                                <label id="label_female" for="gioiTinhNu" onclick="selectRadio('gioiTinhNu')">Nữ</label>
+                                @Html.RadioButtonFor(m => m.GioiTinh, 0, new { id = "gioiTinhNu" })
+                            </div>
 
-                            @*@Html.RadioButtonFor(m => m.GioiTinh, 1)
-                                @Html.RadioButtonFor(m => m.GioiTinh, 0)*@
 
                         </div>
                     </div>

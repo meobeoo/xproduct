@@ -501,7 +501,6 @@ body {
 
 .gender {
     position: relative;
-    ;
     width: 280px;
     height: 19px;
     margin-top: 19px;
@@ -533,6 +532,7 @@ body {
 }
 
 .user_big_avt {
+    cursor: pointer;
     width: 180px;
     height: 152px;
     margin-top: 20px;
@@ -590,16 +590,6 @@ body {
     color: #0277BD;
 }
 
-.gender #gioiTinhNam {
-    display: inline-block;
-    margin-left: 15px;
-}
-
-.gender #gioiTinhNu {
-    display: inline-block;
-    margin-left: 40px;
-}
-
 #text_gender {
     font-size: 13px;
     color: #707070;
@@ -608,33 +598,51 @@ body {
     bottom: -1px;
 }
 
-#radio_male {
-    left: 77px;
-    bottom: 0;
-    width: 18px;
-    height: 18px;
+.gender #male {
+    height: 19px;
     position: absolute;
-}
-
-#label_male {
-    font-size: 14px;
     left: 67px;
-    position: absolute;
 }
 
-#radio_female {
-    left: 173px;
-    bottom: 0;
-    width: 18px;
-    height: 18px;
+    .gender #male #gioiTinhNam {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    .gender #male #label_male {
+        font-size: 14px;
+        color: #000;
+        position: absolute;
+        left: 26px;
+        height: 19px;
+        margin: 0;
+    }
+
+.gender #female {
+    height: 19px;
     position: absolute;
+    left: 163px;
 }
 
-#label_female {
-    font-size: 14px;
-    left: 199px;
-    position: absolute;
-}
+    .gender #female #gioiTinhNu {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    .gender #female #label_female {
+        font-size: 14px;
+        color: #000;
+        position: absolute;
+        left: 26px;
+        height: 19px;
+        margin: 0;
+    }
 
 #col_2 {
     width: 340px;
@@ -833,15 +841,11 @@ body {
     background-color: #ffffff;
 }
 
-.form-control {
-    background-color: #ffffff;
-}
-
 .input-group-text {
     background-color: #ffffff;
 }
 
-.input[readonly] {
+.form-control[readonly] {
     background-color: #ffffff;
     border: 1px solid #DEDEDF;
     border-radius: 4px;
@@ -864,6 +868,12 @@ body {
     background-color: #ffffff;
     border: 1px solid #ced4da;
 }
+
+.gray_bg {
+    background-color: #F3F4F6;
+    cursor: default;
+}
+
 
 
 #NgaySinh {

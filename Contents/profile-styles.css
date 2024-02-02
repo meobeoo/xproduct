@@ -850,3 +850,21 @@ body {
     font-size: 14px;
     background-color: #ffffff;
 }
+#datepicker {
+    background-color: #ffffff;
+}
+
+.form-control {
+    background-color: #ffffff;
+}
+
+
+
+.input-group-text {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+}
+
+.input[readonly] {
+    background-color: #ffffff;
+}

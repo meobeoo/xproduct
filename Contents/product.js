@@ -21,8 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var userManager = document.querySelector(".home_content .user_manager");
     var toggleButton = document.querySelector(".info_button");
 
-    toggleButton.addEventListener("click", function () {
+    toggleButton.addEventListener("click", function (event) {
+        // Ngăn chặn sự kiện click từ việc lan truyền lên các phần tử cha
+        event.stopPropagation();
+
         userManager.classList.toggle("hidden");
+    });
+
+    document.addEventListener('click', function (event) {
+        // Kiểm tra xem sự kiện click có xảy ra bên ngoài div không
+        if (!userManager.contains(event.target)) {
+            // Nếu có, thêm class hidden vào div
+            userManager.classList.add('hidden');
+        }
     });
 });
 

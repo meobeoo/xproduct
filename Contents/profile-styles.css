@@ -610,6 +610,7 @@ body {
         position: absolute;
         left: 0;
         bottom: 0;
+        cursor: pointer;
     }
 
     .gender #male #label_male {
@@ -619,6 +620,7 @@ body {
         left: 26px;
         height: 19px;
         margin: 0;
+        cursor: pointer;
     }
 
 .gender #female {
@@ -633,6 +635,7 @@ body {
         position: absolute;
         left: 0;
         bottom: 0;
+        cursor: pointer;
     }
 
     .gender #female #label_female {
@@ -642,6 +645,7 @@ body {
         left: 26px;
         height: 19px;
         margin: 0;
+        cursor: pointer;
     }
 
 #col_2 {

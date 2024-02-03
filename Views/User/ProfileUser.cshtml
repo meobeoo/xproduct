@@ -65,7 +65,13 @@
             <div class="col-sm" style="display: inline-block;">
                 <div class="user_info_container">
                     <input type="file" name="fileToUpload" class="input_image" id="image" accept="image/*" />
-                    <img class="user_big_avt" id="id_image" onclick="onFile()" src="@Model.ImageBase64">
+                    
+                    @{
+                        var src = !string.IsNullOrEmpty(Model.ImageBase64) ? Model.ImageBase64 : "https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg";
+
+                    }
+                    <img class="user_big_avt" id="id_image" onclick="onFile()"
+                         src="@src">
                     <center><span id="span_1"><b>@user.FullName</b></span></center>
                     <center><div id="span_2">@user.Email</div></center>
                 </div>

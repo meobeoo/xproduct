@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.EnterpriseServices.CompensatingResourceManager;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -123,6 +124,8 @@ namespace Xproduct.Controllers
                     }
                 }
                 _db.SaveChanges();
+
+                Session["sesion"] = item;
             }
             return ProfileUser();
         }

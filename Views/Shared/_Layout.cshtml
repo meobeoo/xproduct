@@ -1,7 +1,7 @@
 ﻿@using Xproduct.Models
 @{
     User user = (User)Session["sesion"];
-    
+    var ImageBase64 = (user.Image != null) ? "data:image/jpeg;base64," + Convert.ToBase64String(user.Image) : "https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg";
 }
 
 
@@ -45,7 +45,7 @@
         </div>
         <div class="user_manager hidden" id="user_manager">
             <div class="user_info">
-                <img class="show_avt" src="~/source-img/Group 22934.png">
+                <img class="show_avt" src="@ImageBase64">
                 <div class="user_name_and_mail">
                     <span class="name"><b>@user.FullName</b></span><br>
                     <div class="mail">Email: @user.Email</div>

@@ -23,7 +23,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 </head>
 <body>
-    @Html.Hidden("Text", (string)ViewBag.c);
+    @Html.Hidden("Text", (string)ViewBag.c)
     <div class="login-container">
         <a href="@Url.Action("Index","Login")">
             <button type="button" class="btnbacktologin" onclick="redirectToLogin()"><b>&nbsp;&nbsp;&nbsp;Đăng nhập</b></button>

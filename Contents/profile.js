@@ -188,28 +188,16 @@ function goToNotificationPage() {
     window.location.href = '/User/Notification';
 }
 
-$(document).ready(function () {
-    $('#NgaySinh').datepicker({
-        format: 'dd/mm/yyyy', // Định dạng ngày tháng nếu cần
-        todayHighlight: true,
-        autoclose: true,
-    });
-});
-$(document).ready(function () {
-    // Khi click vào biểu tượng lịch
-    $('#icon-calendar').click(function () {
-        // Mở datepicker
-        $('#NgaySinh').datepicker('show');
-    });
 
-    // Kích hoạt datepicker
-    $('#NgaySinh').datepicker({
-        format: 'dd/mm/yyyy', // Định dạng ngày tháng nếu cần
-        todayHighlight: true,
-        autoclose: true,
-    });
-});
+
 
 function selectRadio(radioId) {
     document.getElementById(radioId).click();
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    flatpickr("#NgaySinh", {
+        dateFormat: "d/m/Y",
+        maxDate: "today",
+    });
+});

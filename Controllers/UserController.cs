@@ -101,7 +101,16 @@ namespace Xproduct.Controllers
                 }
                 else
                 {
-                    item.NgaySinh = DateTime.ParseExact(_dtoUser.NgaySinh, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    DateTime ngaySinh;
+                    if (DateTime.TryParseExact(_dtoUser.NgaySinh, "dd/MM/yyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out ngaySinh))
+                    {
+                        item.NgaySinh = ngaySinh;
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("NgaySinh", "Ngày sinh không hợp lệ");
+                        return ProfileUser();
+                    }
                 }
                 item.IdPhongBan = _dtoUser.IdPhongBan;
                 item.IdChucVu = _dtoUser.IdChucVu;

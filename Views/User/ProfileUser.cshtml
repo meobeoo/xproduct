@@ -7,8 +7,13 @@
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<!-- Include Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Include Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 @Styles.Render("~/Contents/profile-styles.css")
 @using (Html.BeginForm("ProfileUser", "User", FormMethod.Post, new { enctype = "multipart/form-data", id = "FormProfileUser" }))
 {
@@ -65,7 +70,7 @@
             <div class="col-sm" style="display: inline-block;">
                 <div class="user_info_container">
                     <input type="file" name="fileToUpload" class="input_image" id="image" accept="image/*" />
-                    
+
                     @{
                         var src = !string.IsNullOrEmpty(Model.ImageBase64) ? Model.ImageBase64 : "https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg";
 
@@ -97,7 +102,7 @@
                         <div id="datepicker" class="input-info" style="position: relative;">
                             <label for="NgaySinh" class="label">Ngày sinh: </label>
                             <div class="input-group">
-                                @Html.TextBox("NgaySinh", Model.NgaySinh, new { @class = "input form-control", @id = "NgaySinh", @readonly = "readonly"})
+                                @Html.TextBox("NgaySinh", Model.NgaySinh, new { @class = "input form-control", @id = "NgaySinh", @readonly = "readonly" })
                                 <div class="input-group-append" style="border: none; position: absolute; right: 0;">
                                     <span class="input-group-text" id="icon-calendar">
                                         <img src="~/source-img/calendar.png" id="img-calendar">
@@ -190,4 +195,5 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+

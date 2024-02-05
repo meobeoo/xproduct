@@ -88,17 +88,17 @@
                         <div class="input-info-1">
                             <label for="username" class="label">Tên truy cập: <span class="redtext">*</span></label>
                             @*<input type="text" name="username" class="input gray_bg" readonly>*@
-                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly", @disabled = "disabled" })
                         </div>
                         <div class="input-info">
                             <label for="username" class="label">Email: <span class="redtext">*</span></label>
                             @*<input type="text" name="username" class="input gray_bg" readonly>*@
-                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly", @disabled = "disabled" })
                         </div>
                         <div class="input-info">
                             <label for="username" class="label">Họ và tên: <span class="redtext">*</span></label>
                             @*<input type="text" name="username" class="input gray_bg" readonly>*@
-                            @Html.TextBoxFor(m => m.FullName, new { @class = "input gray_bg", @readonly = "readonly" })
+                            @Html.TextBoxFor(m => m.FullName, new { @class = "input gray_bg", @readonly = "readonly", @disabled = "disabled" })
                         </div>
                         <div id="datepicker" class="input-info" style="position: relative;">
                             <label for="NgaySinh" class="label">Ngày sinh: </label>

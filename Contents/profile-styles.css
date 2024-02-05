@@ -901,3 +901,12 @@ body {
     right: 10px; 
     top: 10px;
 }
+
+.user_info_container .choose-img {
+    width: 20px;
+    position: absolute;
+    right: 50px;    
+    top: 145px;
+    opacity: 0.5;
+    cursor: pointer;
+}

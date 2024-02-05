@@ -25,9 +25,7 @@
 <body>
     @Html.Hidden("Text", (string)ViewBag.c)
     <div class="login-container">
-        <a href="@Url.Action("Index","Login")">
-            <button type="button" class="btnbacktologin" onclick="redirectToLogin()"><b>&nbsp;&nbsp;&nbsp;Đăng nhập</b></button>
-        </a>
+        <button type="button" class="btnbacktologin" onclick="redirectToLogin()"><b>&nbsp;&nbsp;&nbsp;Đăng nhập</b></button>
         <div class="fade">
             <div class="slide">
                 <img src="~/source-img/login.png">
@@ -90,7 +88,9 @@
                     </div>
                 </center>
             </div>
+
         }
+    </div>
         <script src="~/Contents/function.js?vs=@Guid.NewGuid()"></script>
         <script>
             if ($('#Text').val().length > 0) {

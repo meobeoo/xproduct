@@ -77,6 +77,7 @@
                     }
                     <img class="user_big_avt" id="id_image" onclick="onFile()"
                          src="@src">
+                    <img class="choose-img" onclick="onFile()" src="~/source-img/choose-img.svg" />
                     <center><span id="span_1"><b>@user.FullName</b></span></center>
                     <center><div id="span_2">@user.Email</div></center>
                 </div>
@@ -85,17 +86,17 @@
                 <div class="row">
                     <div class="col-sm" id="col_1">
                         <div class="input-info-1">
-                            <label for="username" class="label">Tên truy cập: <p class="redtext">*</p></label>
+                            <label for="username" class="label">Tên truy cập: <span class="redtext">*</span></label>
                             @*<input type="text" name="username" class="input gray_bg" readonly>*@
                             @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
                         </div>
                         <div class="input-info">
-                            <label for="username" class="label">Email: <p class="redtext">*</p></label>
+                            <label for="username" class="label">Email: <span class="redtext">*</span></label>
                             @*<input type="text" name="username" class="input gray_bg" readonly>*@
                             @Html.TextBoxFor(m => m.Email, new { @class = "input gray_bg", @readonly = "readonly" })
                         </div>
                         <div class="input-info">
-                            <label for="username" class="label">Họ và tên: <p class="redtext">*</p></label>
+                            <label for="username" class="label">Họ và tên: <span class="redtext">*</span></label>
                             @*<input type="text" name="username" class="input gray_bg" readonly>*@
                             @Html.TextBoxFor(m => m.FullName, new { @class = "input gray_bg", @readonly = "readonly" })
                         </div>
@@ -135,7 +136,7 @@
                     </div>
                     <div class="col-sm" id="col_2">
                         <div class="input-info-3">
-                            <label for="phone" class="label">Số điện thoại:  <p class="redtext">*</p></label>
+                            <label for="phone" class="label">Số điện thoại: <span class="redtext">*</span></label>
                             @*<input type="text" name="phone" class="input" id="phone" placeholder="">*@
                             @Html.TextBoxFor(m => m.Sdt, new { @class = "input", id = "phone" })
                         </div>

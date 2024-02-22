@@ -1,45 +1,985 @@
 ﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml"; ;
+    Layout = null;
 }
 @Styles.Render("~/Contents/product.css")
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Include Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+</head>
 <body>
-    <div class="sidebar">
-        <div class="logo-content">
+    <div id="add-new-people" class="hidden">
+        <div id="chonnguoithamgiaduan-container">
+            <span id="chonnguoithamgiaduan">Chọn người tham gia dự án</span>
+            <button id="save-button-2"></button>
+            <button id="cancel-button-2"></button>
+        </div>
+        <div id="select-people-container">
+            <div id="search-people-container">
+                <input type="text" id="search-people" placeholder="Nhập thông tin tìm kiếm..." oninput="filterPeople()">
+                <img src="/source-img/blue-search-icon.svg">
+            </div>
+            <div id="list-people">
+                <ul>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Hoàng Thuý Quỳnh Anh</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Phạm Đức Hoà</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Nguyễn Thị Hiền</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Nguyễn Đức Thịnh</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Ngô Thị Thuý</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Bùi Nguyên Cường</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="select-role-container">
+            <div id="show-name-container">
+                <span id="show-name">Vui lòng chọn người tham gia dự án ...</span>
+            </div>
+            <div id="select-role">
+                <ul>
+                    <li>
+                        <input type="checkbox">
+                        <div id="role-1">
+                            <span class="VT">VT</span>
+                        </div>
+                        <span>Vai trò tham gia 1</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <div id="role-2">
+                            <span class="VT">VT</span>
+                        </div>
+                        <span>Vai trò tham gia 2</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="add-new-product" class="hidden">
+        <div id="themsanphammoi-container">
+            <span id="themsanphammoi">Thêm mới sản phẩm</span>
+            <button id="save-button"></button>
+            <button id="cancel-button"></button>
+        </div>
+
+        <form>
+            <div id="add-photo" onclick="uploadImage()">
+                <input type="file" id="imageInput" onchange="setBackgroundImage()">
+            </div>
+            <div id="product-code-input">
+                <label for="product-code" class="label">Mã sản phẩm: <span class="redtext">*</span></label>
+                <input type="text" name="product-code" class="input gray_bg" value="SP000001" disabled>
+            </div>
+            <div id="product-name-input">
+                <label for="product-name" class="label">Tên sản phẩm: <span class="redtext">*</span></label>
+                <input type="text" name="product-name" class="input" placeholder="Nhập tên sản phẩm">
+            </div>
+            <div id="product-group-input">
+                <label for="product-group" class="label">Nhóm sản phẩm: <span class="redtext">*</span></label>
+                <select id="dropdown-group" name="product-group" class="input">
+                    <option value="" disabled selected hidden>Chọn nhóm sản phẩm</option>
+                    <option value="Nhóm sản phẩm 1">Nhóm sản phẩm 1</option>
+                    <option value="Nhóm sản phẩm 2">Nhóm sản phẩm 2</option>
+                    <option value="Nhóm sản phẩm 3">Nhóm sản phẩm 3</option>
+                    <option value="Nhóm sản phẩm 4">Nhóm sản phẩm 4</option>
+                    <option value="Nhóm sản phẩm 5">Nhóm sản phẩm 5</option>
+                </select>
+            </div>
+            <div id="product-size-input">
+                <label for="product-size" class="label">Size sản phẩm: <span class="redtext">*</span></label>
+                <select id="dropdown-size" name="product-size" class="input">
+                    <option value="" disabled selected hidden>Chọn size sản phẩm</option>
+                    <option value="size1">Nhỏ</option>
+                    <option value="size2">Trung bình</option>
+                    <option value="size3">Lớn</option>
+                    <option value="size4">Rất lớn</option>
+                </select>
+            </div>
+            <div id="datepicker" class="datepicker1">
+                <label for="DayStart" class="label">Ngày bắt đầu: <span class="redtext">*</span></label>
+                <div class="input-group">
+                    <input type="text" id="DayStart" name="DayStart" class="input form-control" readonly />
+                    <img src="/source-img/calendar.svg" id="day-start-calendar" onclick="openDayStartDatePicker()">
+                </div>
+            </div>
+            <div id="datepicker" class="datepicker2">
+                <label for="DayEnd" class="label">Ngày kết thúc: <span class="redtext">*</span></label>
+                <div class="input-group">
+                    <input type="text" id="DayEnd" name="DayEnd" class="input form-control" readonly />
+                    <img src="/source-img/calendar.svg" id="day-end-calendar" onclick="openDayEndDatePicker()">
+                </div>
+            </div>
+            <div id="describe-group-input">
+                <label for="describe-input" class="label">Mô tả sản phẩm:</label>
+                <textarea type="text" name="describe-input" id="describe-input"></textarea>
+            </div>
+            <span id="nguoithamgia"><b>Người tham gia: </b><span class="redtext">*</span></span>
+            <div id="add-people-container">
+                <button id="add-people" type="button"></button>
+                <table id="table-people">
+                    <tr>
+                        <th id="sttCol">STT</th>
+                        <th id="actionCol">Thao tác</th>
+                        <th id="participantCol">Người tham gia</th>
+                        <th id="roleCol">Vai trò</th>
+                    </tr>
+                </table>
+            </div>
+            <div id="file-container">
+                <span><b>File đính kèm: </b></span>
+                <button type="button" id="pick-file"></button>
+                <input type="file" id="file-input" accept="*" style="display: none;" />
+                <table id="table-file">
+                    <tr>
+                        <th id="sttCol2">STT</th>
+                        <th id="actionCol2">Thao tác</th>
+                        <th id="fileNameCol">Tên tệp</th>
+                        <th id="fileSizeCol">Kích thước file</th>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <div id="product-detail" class="hidden">
+        <div id="themsanphammoi-container">
+            <span id="themsanphammoi">Chi tiết sản phẩm</span>
+            <button id="done-button"></button>
+        </div>
+
+        <form>
+            <img src="/source-img/icon-xproduct.png" class="photo">
+            <div id="product-code-input">
+                <label for="product-code" class="label">Mã sản phẩm: <span class="redtext">*</span></label>
+                <input type="text" name="product-code" class="input gray_bg" value="SP000001" disabled>
+            </div>
+            <div id="product-name-input">
+                <label for="product-name" class="label">Tên sản phẩm: <span class="redtext">*</span></label>
+                <input type="text" name="product-name" class="input gray_bg" disabled value="Sản phẩm X-Product web">
+            </div>
+            <div id="product-group-input">
+                <label for="product-group" class="label">Nhóm sản phẩm: <span class="redtext">*</span></label>
+                <select id="dropdown-group" name="product-group" class="input" disabled>
+                    <option value="" disabled selected hidden>Chọn nhóm sản phẩm</option>
+                    <option value="Nhóm sản phẩm 1">Nhóm sản phẩm 1</option>
+                    <option value="Nhóm sản phẩm 2">Nhóm sản phẩm 2</option>
+                    <option value="Nhóm sản phẩm 3">Nhóm sản phẩm 3</option>
+                    <option value="Nhóm sản phẩm 4">Nhóm sản phẩm 4</option>
+                    <option value="Nhóm sản phẩm 5">Nhóm sản phẩm 5</option>
+                </select>
+            </div>
+            <div id="product-size-input">
+                <label for="product-size" class="label">Size sản phẩm: <span class="redtext">*</span></label>
+                <select id="dropdown-size" name="product-size" class="input" disabled>
+                    <option value="" disabled selected hidden>Chọn size sản phẩm</option>
+                    <option value="size1">Nhỏ</option>
+                    <option value="size2" selected>Trung bình</option>
+                    <option value="size3">Lớn</option>
+                    <option value="size4">Rất lớn</option>
+                </select>
+            </div>
+            <div id="datepicker" class="datepicker1">
+                <label for="DayStart" class="label">Ngày bắt đầu: <span class="redtext">*</span></label>
+                <div class="input-group">
+                    <input type="text" id="DayStart2" name="DayStart" value="12/12/2023" class="input form-control" disabled />
+                    <img src="/source-img/calendar.svg" id="day-start-calendar" style="cursor: default;">
+                </div>
+            </div>
+            <div id="datepicker" class="datepicker2">
+                <label for="DayEnd" class="label">Ngày kết thúc: <span class="redtext">*</span></label>
+                <div class="input-group">
+                    <input type="text" id="DayEnd2" name="DayEnd" value="12/12/2024" class="input form-control" disabled />
+                    <img src="/source-img/calendar.svg" id="day-end-calendar" style="cursor: default;">
+                </div>
+            </div>
+            <div id="describe-group-input">
+                <label for="describe-input" class="label">Mô tả sản phẩm:</label>
+                <textarea type="text" name="describe-input" id="describe-input-detail" disabled>Sản phẩm X-Product web</textarea>
+            </div>
+            <span id="nguoithamgia"><b>Người tham gia: </b><span class="redtext">*</span></span>
+            <div id="add-people-container">
+                <table id="table-people">
+                    <tr>
+                        <th id="sttCol">STT</th>
+                        <th id="actionCol">Thao tác</th>
+                        <th id="participantCol">Người tham gia</th>
+                        <th id="roleCol">Vai trò</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><button onclick="deleteRow(this)" disabled class="delete-row-btn"></button></td>
+                        <td><img class="table-img" src="/source-img/avt-people.svg">Hoàng Thuý Quỳnh Anh</td>
+                        <td><div class="div-vt-1"></div>Vai trò tham gia 1<br><div class="div-vt-2"></div>Vai trò tham gia 2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><button onclick="deleteRow(this)" disabled class="delete-row-btn"></button></td>
+                        <td><img class="table-img" src="/source-img/avt-people.svg">Hoàng Thuý Quỳnh Anh</td>
+                        <td><div class="div-vt-1"></div>Vai trò tham gia 1<br><div class="div-vt-2"></div>Vai trò tham gia 2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><button onclick="deleteRow(this)" disabled class="delete-row-btn"></button></td>
+                        <td><img class="table-img" src="/source-img/avt-people.svg">Hoàng Thuý Quỳnh Anh</td>
+                        <td><div class="div-vt-1"></div>Vai trò tham gia 1<br><div class="div-vt-2"></div>Vai trò tham gia 2</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="file-container">
+                <span><b>File đính kèm: </b></span>
+                <input type="file" id="file-input" accept="*" style="display: none;" />
+                <table id="table-file" style="margin-top: 0px;">
+                    <tr>
+                        <th id="sttCol2">STT</th>
+                        <th id="actionCol2">Thao tác</th>
+                        <th id="fileNameCol">Tên tệp</th>
+                        <th id="fileSizeCol">Kích thước file</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><button onclick="deleteRow2(this)" class="delete-row-btn" disabled></button></td>
+                        <td>Tai lieu huong dan su dung.docx</td>
+                        <td>4 MB</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><button onclick="deleteRow2(this)" class="delete-row-btn" disabled></button></td>
+                        <td>Tai lieu huong dan su dung.docx</td>
+                        <td>4 MB</td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <div id="edit-product" class="hidden">
+        <div id="themsanphammoi-container">
+            <span id="themsanphammoi">Chỉnh sửa sản phẩm</span>
+            <button id="save-button-3"></button>
+            <button id="cancel-button-3"></button>
+        </div>
+
+        <form id="edit-form">
+            <img src="/source-img/icon-xproduct.png" class="photo">
+            <div id="product-code-input">
+                <label for="product-code" class="label">Mã sản phẩm: <span class="redtext">*</span></label>
+                <input type="text" name="product-code" class="input gray_bg" value="SP000001" disabled>
+            </div>
+            <div id="product-name-input">
+                <label for="product-name" class="label">Tên sản phẩm: <span class="redtext">*</span></label>
+                <input type="text" name="product-name" class="input gray_bg" disabled value="Sản phẩm X-Product web">
+            </div>
+            <div id="product-group-input">
+                <label for="product-group" class="label">Nhóm sản phẩm: <span class="redtext">*</span></label>
+                <select id="dropdown-group" name="product-group-2" class="input">
+                    <option value="" selected hidden>Chọn nhóm sản phẩm</option>
+                    <option value="Nhóm sản phẩm 1">Nhóm sản phẩm 1</option>
+                    <option value="Nhóm sản phẩm 2">Nhóm sản phẩm 2</option>
+                    <option value="Nhóm sản phẩm 3">Nhóm sản phẩm 3</option>
+                    <option value="Nhóm sản phẩm 4">Nhóm sản phẩm 4</option>
+                    <option value="Nhóm sản phẩm 5">Nhóm sản phẩm 5</option>
+                </select>
+            </div>
+            <div id="product-size-input">
+                <label for="product-size" class="label">Size sản phẩm: <span class="redtext">*</span></label>
+                <select id="dropdown-size" name="product-size-2" class="input">
+                    <option value="" selected hidden>Chọn size sản phẩm</option>
+                    <option value="size1">Nhỏ</option>
+                    <option value="size2" selected>Trung bình</option>
+                    <option value="size3">Lớn</option>
+                    <option value="size4">Rất lớn</option>
+                </select>
+            </div>
+            <div id="datepicker" class="datepicker1">
+                <label for="DayStart2" class="label">Ngày bắt đầu: <span class="redtext">*</span></label>
+                <div class="input-group">
+                    <input type="text" id="DayStart2" name="DayStart2" value="12/12/2023" class="input form-control" />
+                    <img src="/source-img/calendar.svg" id="day-start-calendar-2" onclick="openDayStartDatePicker2()">
+                </div>
+            </div>
+            <div id="datepicker" class="datepicker2">
+                <label for="DayEnd2" class="label">Ngày kết thúc: <span class="redtext">*</span></label>
+                <div class="input-group">
+                    <input type="text" id="DayEnd2" name="DayEnd2" value="12/12/2024" class="input form-control" />
+                    <img src="/source-img/calendar.svg" id="day-end-calendar-2" onclick="openDayEndDatePicker2()">
+                </div>
+            </div>
+            <div id="describe-group-input">
+                <label for="describe-input" class="label">Mô tả sản phẩm:</label>
+                <textarea type="text" name="edit-describe-input" id="edit-describe-input-detail">Sản phẩm X-Product web</textarea>
+            </div>
+            <span id="nguoithamgia"><b>Người tham gia: </b><span class="redtext">*</span></span>
+            <div id="add-people-container">
+                <table id="edit-table-people">
+                    <tr>
+                        <th id="sttCol">STT</th>
+                        <th id="actionCol">Thao tác</th>
+                        <th id="participantCol">Người tham gia</th>
+                        <th id="roleCol">Vai trò</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><button onclick="deleteRow4(this)" class="delete-row-btn"></button></td>
+                        <td><img class="table-img" src="/source-img/avt-people.svg">Hoàng Thuý Quỳnh Anh</td>
+                        <td><div class="div-vt-1"></div>Vai trò tham gia 1<br><div class="div-vt-2"></div>Vai trò tham gia 2</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><button onclick="deleteRow4(this)" class="delete-row-btn"></button></td>
+                        <td><img class="table-img" src="/source-img/avt-people.svg">Hoàng Thuý Quỳnh Anh</td>
+                        <td><div class="div-vt-1"></div>Vai trò tham gia 1<br><div class="div-vt-2"></div>Vai trò tham gia 2</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><button onclick="deleteRow4(this)" class="delete-row-btn"></button></td>
+                        <td><img class="table-img" src="/source-img/avt-people.svg">Hoàng Thuý Quỳnh Anh</td>
+                        <td><div class="div-vt-1"></div>Vai trò tham gia 1<br><div class="div-vt-2"></div>Vai trò tham gia 2</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="file-container">
+                <span><b>File đính kèm: </b></span>
+                <input type="file" id="file-input" accept="*" style="display: none;" />
+                <table id="edit-table-file" style="margin-top: 0px;">
+                    <tr>
+                        <th id="sttCol2">STT</th>
+                        <th id="actionCol2">Thao tác</th>
+                        <th id="fileNameCol">Tên tệp</th>
+                        <th id="fileSizeCol">Kích thước file</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><button onclick="deleteRow5(this)" class="delete-row-btn"></button></td>
+                        <td>Tai lieu huong dan su dung.docx</td>
+                        <td>4 MB</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><button onclick="deleteRow5(this)" class="delete-row-btn"></button></td>
+                        <td>Tai lieu huong dan su dung.docx</td>
+                        <td>4 MB</td>
+                    </tr>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <div class="logo-content" id="logo-content">
             <btn id="btn"></btn>
-            <img src="~/source-img/logo-tong-quan.png" class="logo">
+            <img src="/source-img/logo-tong-quan.png" class="logo">
         </div>
         <div class="mot_duong_ke"></div>
-        <ul class="nav_list">
+        <ul class="nav_list" id="nav_list">
             <li class="selected">
-                <a href="@Url.Action("Index","User")">
+                <a href="tong-quan.html">
                     <div class="highlight"></div>
-                    <img src="~/source-img/Group 20895-off.png" class="icon" id="first">
+                    <img src="/source-img/Group 20895-off.png" class="icon">
                     <span class="links_name">Tổng quan</span>
                 </a>
             </li>
             <li>
-                <a href="@Url.Action("Product","User")">
+                <a href="product.html">
                     <div class="highlight active"></div>
-                    <img src="~/source-img/Group 20867.png" class="icon">
+                    <img src="/source-img/Group 20867.png" class="icon">
                     <span class="links_name active">Product</span>
                 </a>
             </li>
             <li>
-                <a href="@Url.Action("Statistical","User")">
+                <a href="thong-ke.html">
                     <div class="highlight"></div>
-                    <img src="~/source-img/Group 20872-off.png" class="icon">
+                    <img src="/source-img/Group 20872-off.png" class="icon">
                     <span class="links_name">Thống kê</span>
                 </a>
             </li>
             <li>
-                <a href="@Url.Action("Setting","User")">
+                <a href="thiet-lap.html">
                     <div class="highlight"></div>
-                    <img src="~/source-img/Group 20873-off.png" class="icon">
+                    <img src="/source-img/Group 20873-off.png" class="icon">
                     <span class="links_name">Thiết lập</span>
                 </a>
             </li>
         </ul>
     </div>
+    <div class="tool_bar" id="tool_bar">
+        <button class="question" onclick="goToSupportPage()"></button>
+        <button class="notification" onclick="goToNotificationPage()"></button>
+        <button class="info_button">
+            <div class="user_info">
+                <img class="user_avt" src="/source-img/avt-icon.png">
+                <span class="username">Admin</span>
+                <img class="down" src="/source-img/down.png">
+            </div>
+        </button>
+    </div>
+    <div class="home_content" id="home_content">
+
+        <div class="user_manager hidden">
+            <div class="user_info">
+                <img class="show_avt" src="/source-img/Group 22934.png">
+                <div class="user_name_and_mail">
+                    <span class="name"><b>Admin</b></span><br>
+                    <span class="mail">Email: admin@gmail.com</span>
+                </div>
+            </div>
+            <ul class="function_list">
+                <li>
+                    <a href="ho-so-ca-nhan.html">
+                        <img src="/source-img/Group 21339.png" class="function_img" id="btn1">
+                        <span class="function_text">Hồ sơ cá nhân</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="doi-mat-khau.html">
+                        <img src="/source-img/Group 19044.png" class="function_img" id="btn2">
+                        <span class="function_text">Đổi mật khẩu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ho-tro.html">
+                        <img src="/source-img/question.png" class="function_img">
+                        <span class="function_text">Hỗ trợ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="nang-cap-tai-khoan.html">
+                        <img src="/source-img/Group 22960.png" class="function_img">
+                        <span class="function_text">Nâng cấp tài khoản</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <img src="/source-img/Group 22959.png" class="function_img">
+                        <span class="function_text">Đăng xuất</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="tool_bar_2" id="tool_bar_2">
+            <span class="title"><b>Danh sách sản phẩm</b></span>
+            <button type="button" id="add">
+                <img src="/source-img/add.svg" id="img_add">
+                <span id="text_add">Thêm mới</span>
+            </button>
+            <button type="button" id="import">
+                <img src="/source-img/import.svg" id="img_import">
+                <span id="text_import">Nhập file</span>
+                <img src="/source-img/arrow.svg" id="arrow">
+            </button>
+            <button type="button" id="export">
+                <img src="/source-img/export.svg" id="img_export">
+                <span id="text_export">Xuất file</span>
+                <img src="/source-img/arrow.svg" id="arrow">
+            </button>
+            <button type="button" id="setting"></button>
+        </div>
+
+        <div class="main_content" id="main_content">
+            <div class="row" id="row_radio">
+                <div class="col-lg">
+                    <div class="col-sm radio_col" id="col_radio_1" onclick="checkRadio('today_radio')">
+                        <input type="radio" name="date_range" value="today" id="today_radio" checked>
+                        <label for="today" id="label_today">Hôm nay</label>
+                    </div>
+                    <div class="col-sm radio_col" id="col_radio_2" onclick="checkRadio('yesterday_radio')">
+                        <input type="radio" name="date_range" value="yesterday" id="yesterday_radio">
+                        <label for="yesterday" id="label_yesterday">Hôm qua</label>
+                    </div>
+                    <div class="col-sm radio_col" id="col_radio_3" onclick="checkRadio('this_week_radio')">
+                        <input type="radio" name="date_range" value="this_week" id="this_week_radio">
+                        <label for="this_week" id="label_this_week">Tuần này</label>
+                    </div>
+                    <div class="col-sm radio_col" id="col_radio_4" onclick="checkRadio('last_week_radio')">
+                        <input type="radio" name="date_range" value="last_week" id="last_week_radio">
+                        <label for="last_week" id="label_last_week">Tuần trước</label>
+                    </div>
+                    <div class="col-sm radio_col" id="col_radio_5" onclick="checkRadio('this_month_radio')">
+                        <input type="radio" name="date_range" value="this_month" id="this_month_radio">
+                        <label for="this_month" id="label_this_month">Tháng này</label>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="col-sm radio_col" id="col_radio_6" onclick="checkRadio('last_month_radio')">
+                        <input type="radio" name="date_range" value="last_month" id="last_month_radio">
+                        <label for="last_month" id="label_last_month">Tháng trước</label>
+                    </div>
+                    <div class="col-sm radio_col" id="col_radio_7" onclick="checkRadio('this_year_radio')">
+                        <input type="radio" name="date_range" value="this_year" id="this_year_radio">
+                        <label for="this_year" id="label_this_year">Năm nay</label>
+                    </div>
+                    <div class="col-sm radio_col" id="col_radio_8" onclick="checkRadio('last_year_radio')">
+                        <input type="radio" name="date_range" value="last_year" id="last_year_radio">
+                        <label for="last_year" id="label_last_year">Năm trước</label>
+                    </div>
+                    <div class="col-sm radio_col" id="col_radio_9" onclick="checkRadio('other_select_radio')">
+                        <input type="radio" name="date_range" value="other_select" id="other_select_radio">
+                        <label for="other_select" id="label_other_select">Chọn khác</label>
+                    </div>
+                </div>
+            </div>
+            <form class="search row">
+                <div class="col-md">
+                    <div class="search-input-container">
+                        <img src="/source-img/search-icon.svg">
+                        <input type="search" class="search-input" id="search-name" placeholder="Theo mã, tên sản phẩm">
+                    </div>
+                </div>
+                <div class="col-md">
+                    <select id="search-dropdown-group" class="dropdown-select">
+                        <option value="" disabled selected hidden>Nhóm sản phẩm</option>
+                        <option value="Nhóm sản phẩm 1">Nhóm sản phẩm 1</option>
+                        <option value="Nhóm sản phẩm 2">Nhóm sản phẩm 2</option>
+                        <option value="Nhóm sản phẩm 3">Nhóm sản phẩm 3</option>
+                        <option value="Nhóm sản phẩm 4">Nhóm sản phẩm 4</option>
+                        <option value="Nhóm sản phẩm 5">Nhóm sản phẩm 5</option>
+                    </select>
+                </div>
+                <div class="col-md">
+                    <select id="dropdown-status" class="dropdown-select">
+                        <option value="" disabled selected hidden>Trạng thái</option>
+                        <option value="Đã hoàn thành">Đã hoàn thành</option>
+                        <option value="Đang làm">Đang làm</option>
+                        <option value="Đã huỷ">Đã huỷ</option>
+                    </select>
+                </div>
+                <div class="col-md">
+                    <input type="text" class="search-input" id="search-by-name" placeholder="Người tạo">
+                </div>
+                <div class="col-md-2">
+                    <button type="button" id="filter-button"></button>
+                </div>
+            </form>
+            <div class="quantity row">
+                <div class="col-md custom">
+                    <div>
+                        <span id="tongsanpham">Tổng sản phẩm</span>
+                        <span id="soluongtongsanpham"></span>
+                        <div id="logotongsanpham">
+                        </div>
+                        <img src="/source-img/tongsp.svg">
+                    </div>
+                </div>
+                <div class="col-md custom">
+                    <div>
+                        <span id="sanphamdanglam">Sản phẩm đang làm</span>
+                        <span id="soluongsanphamdanglam"></span>
+                        <div id="logosanphamdanglam">
+                        </div>
+                        <img src="/source-img/dahoanthanh.svg">
+                    </div>
+                </div>
+                <div class="col-md custom">
+                    <div>
+                        <span id="sanphamdahoanthanh">Sản phẩm đã hoàn thành</span>
+                        <span id="soluongsanphamdahoanthanh"></span>
+                        <div id="logosanphamdahoanthanh">
+                        </div>
+                        <img src="/source-img/danglam.svg">
+                    </div>
+                </div>
+                <div class="col-md custom">
+                    <div>
+                        <span id="sanphamdahuy">Sản phẩm đã hủy</span>
+                        <span id="soluongsanphamdahuy"></span>
+                        <div id="logosanphamdahuy">
+                        </div>
+                        <img src="/source-img/dahuy.svg">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <table border="1" class="data_table" id="data-table">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000001</td>
+                    <td>Sản phẩm X-Product web</td>
+                    <td>Nhóm sản phẩm 1</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Vũ Tuệ Minh</td>
+                    <td><div class="done-status"></div>Đã hoàn thành</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000002</td>
+                    <td>Sản phẩm X-Product web</td>
+                    <td>Nhóm sản phẩm 2</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Vũ Tuệ Minh</td>
+                    <td><div class="cancel-status"></div>Đã huỷ</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000003</td>
+                    <td>Sản phẩm X-Product web</td>
+                    <td>Nhóm sản phẩm 1</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Vũ Tuệ Minh</td>
+                    <td><div class="in-progress-status"></div>Đang làm</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000004</td>
+                    <td>Sản phẩm X-Product app</td>
+                    <td>Nhóm sản phẩm 2</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Vũ Tuệ Minh</td>
+                    <td><div class="cancel-status"></div>Đã huỷ</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000005</td>
+                    <td>Sản phẩm X-Product app</td>
+                    <td>Nhóm sản phẩm 4</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Vũ Tuệ Minh</td>
+                    <td><div class="cancel-status"></div>Đã huỷ</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000006</td>
+                    <td>Sản phẩm X-Product mobile</td>
+                    <td>Nhóm sản phẩm 5</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Vũ Tuệ Minh</td>
+                    <td><div class="done-status"></div>Đã hoàn thành</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000007</td>
+                    <td>Sản phẩm X-Product web</td>
+                    <td>Nhóm sản phẩm 2</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Thị Hiền</td>
+                    <td><div class="done-status"></div>Đã hoàn thành</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000008</td>
+                    <td>Sản phẩm X-Product app</td>
+                    <td>Nhóm sản phẩm 3</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Hà Linh</td>
+                    <td><div class="done-status"></div>Đã hoàn thành</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000009</td>
+                    <td>Sản phẩm X-Product web</td>
+                    <td>Nhóm sản phẩm 3</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Nguyễn Sinh Hùng</td>
+                    <td><div class="done-status"></div>Đã hoàn thành</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>
+                        <button class="detail" onclick="openDetailDiv()"></button>
+                        <button class="edit" onclick="openEditDiv()"></button>
+                        <button class="delete" onclick="deleteRow3(this)"></button>
+                    </td>
+                    <td>
+                        <img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">
+                    </td>
+                    <td>SP000010</td>
+                    <td>Sản phẩm X-Product mobile</td>
+                    <td>Nhóm sản phẩm 5</td>
+                    <td>12/12/2023</td>
+                    <td>12/12/2024</td>
+                    <td>Phạm Đức Hoà</td>
+                    <td><div class="done-status"></div>Đã hoàn thành</td>
+                </tr>
+            </table>
+            <table border="1" id="data-table-yesterday" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <table border="1" id="data-table-this-week" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <table border="1" id="data-table-last-week" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <table border="1" id="data-table-this-month" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <table border="1" id="data-table-last-month" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <table border="1" id="data-table-this-year" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <table border="1" id="data-table-last-year" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <table border="1" id="data-table-other-select" class="data_table" style="display: none;">
+                <tr>
+                    <th>STT</th>
+                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
+                    <th>Thao tác</th>
+                    <th>Ảnh</th>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Nhóm sản phẩm</th>
+                    <th>Ngày bắt đầu</th>
+                    <th>Ngày kết thúc</th>
+                    <th>Người tạo</th>
+                    <th>Trạng thái sản phẩm</th>
+                </tr>
+            </table>
+            <div id="page">
+                <span id="result-info">Hiển thị kết quả từ 1-20 trên tổng 100</span>
+                <select id="dropdown-row-per-page" onchange="changeNumberRows()">
+                    <option value="20">20/trang</option>
+                    <option value="40">40/trang</option>
+                    <option value="60">60/trang</option>
+                    <option value="80">80/trang</option>
+                    <option value="100">100/trang</option>
+                </select>
+                <button onclick="goToFirstPage()" id="gotofirstpage"></button>
+                <button onclick="goToPreviousPage()" id="gotopreviouspage"></button>
+                <button onclick="goToNextPage()" id="gotonextpage"></button>
+                <button onclick="goToLastPage()" id="gotolastpage"></button>
+                <button style="width: 30px; height: 30px; border-radius: 3px; position: absolute; top: 17px; right: 207px; background-repeat: no-repeat; background-position: center; border: 0.5px solid #DEDEDF; background-color: #fff; color: #4A525A;">15</button>
+                <button style="width: 30px; height: 30px; border-radius: 3px; position: absolute; top: 17px; right: 245px;
+                background-image: url(/source-img/3\ dots.svg); background-repeat: no-repeat; background-position: center; border: 0.5px solid #DEDEDF; background-color: #fff;"></button>
+                <button style="width: 30px; height: 30px; border-radius: 3px; position: absolute; top: 17px; right: 283px; background-repeat: no-repeat; background-position: center; border: 0.5px solid #DEDEDF; background-color: #fff; color: #4A525A;">2</button>
+                <button style="width: 30px; height: 30px; border-radius: 3px; position: absolute; top: 17px; right: 321px; background-repeat: no-repeat; background-position: center; border: 0.5px solid #DEDEDF; background-color: #fff; color: #4A525A;">1</button>
+            </div>
+        </div>
+    </div>
 </body>
-<script src="~/Contents/tong-quan.js?vs=@Guid.NewGuid()"></script>
+</html>
+<script src="~/Contents/product.js"></script>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="30" viewBox="0 0 72 30">
+  <g id="Th_B_TaoDonHang" data-name="Th_B/ TaoDonHang" transform="translate(8 -1)">
+    <rect id="BG" width="72" height="30" rx="4" transform="translate(-8 1)" fill="#2185d0"/>
+    <g id="T_I" data-name="T I" transform="translate(25.001 8)">
+      <text id="Lọc" transform="translate(-20 13)" fill="#fff" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Lọc</tspan></text>
+    </g>
+    <g id="Group_23642" data-name="Group 23642" transform="translate(-1361.124 -46.775)">
+      <path id="Path_17697" data-name="Path 17697" d="M1403.021,69.775a.5.5,0,0,1-.354-.548c0-2.041,0-4.081.005-6.122a1.134,1.134,0,0,0-.329-.823q-2.5-2.677-5-5.363a.64.64,0,0,1,.029-.993,1.214,1.214,0,0,1,.362-.145.4.4,0,0,1,.124,0h12.532a.657.657,0,0,1,.522,1.134c-.452.479-.9.964-1.348,1.446q-1.848,1.984-3.7,3.968a1.027,1.027,0,0,0-.29.741c.005,1.225,0,2.451.005,3.676a1.062,1.062,0,0,1-.272.748c-.622.7-1.237,1.409-1.86,2.111a1.348,1.348,0,0,1-.239.173Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

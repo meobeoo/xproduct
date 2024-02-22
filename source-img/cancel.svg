@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="30" viewBox="0 0 80 30">
+  <g id="Group_23073" data-name="Group 23073" transform="translate(-250 -0.163)">
+    <g id="Rectangle_2891" data-name="Rectangle 2891" transform="translate(250 0.163)" fill="#fff" stroke="#2185d0" stroke-width="0.5">
+      <rect width="80" height="30" rx="4" stroke="none"/>
+      <rect x="0.25" y="0.25" width="79.5" height="29.5" rx="3.75" fill="none"/>
+    </g>
+    <g id="Group_13256" data-name="Group 13256" transform="translate(268 7)">
+      <text id="Hủy" transform="translate(22 13.163)" fill="#2185d0" font-size="13" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Hủy</tspan></text>
+      <path id="Icon_ionic-md-close" data-name="Icon ionic-md-close" d="M21.523,8.923l-1.4-1.4-5.6,5.6-5.6-5.6-1.4,1.4,5.6,5.6-5.6,5.6,1.4,1.4,5.6-5.6,5.6,5.6,1.4-1.4-5.6-5.6Z" transform="translate(-7.523 -6.026)" fill="#2185d0"/>
+    </g>
+  </g>
+</svg>

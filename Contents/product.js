@@ -36,6 +36,26 @@ function switchTableContent(radioId) {
             addDataRow(dataTable, 8, 'SP000008', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Hà Linh', 'done-status', 'Đã hoàn thành');
             addDataRow(dataTable, 9, 'SP000009', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Sinh Hùng', 'done-status', 'Đã hoàn thành');
             addDataRow(dataTable, 10, 'SP000010', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Phạm Đức Hoà', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 11, 'SP000001', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 12, 'SP000002', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 13, 'SP000003', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'in-progress-status', 'Đang làm');
+            addDataRow(dataTable, 14, 'SP000004', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 15, 'SP000005', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 4', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 16, 'SP000006', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 17, 'SP000007', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Thị Hiền', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 18, 'SP000008', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Hà Linh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 19, 'SP000009', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Sinh Hùng', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 20, 'SP000010', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Phạm Đức Hoà', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 21, 'SP000001', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 22, 'SP000002', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 23, 'SP000003', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'in-progress-status', 'Đang làm');
+            addDataRow(dataTable, 24, 'SP000004', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 25, 'SP000005', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 4', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 26, 'SP000006', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 27, 'SP000007', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Thị Hiền', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 28, 'SP000008', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Hà Linh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 29, 'SP000009', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Sinh Hùng', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 30, 'SP000010', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Phạm Đức Hoà', 'done-status', 'Đã hoàn thành');
             break;
         case 'yesterday_radio':
             addDataRow(dataTable, 1, 'SP000011', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
@@ -62,6 +82,7 @@ function switchTableContent(radioId) {
     }
     updateTotalRows(dataTable);
     updateStatusCount(dataTable);
+    updateTotalProducts(dataTable);
 }
 
 function updateTotalRows(table) {
@@ -1033,7 +1054,32 @@ function checkRadio(radioId) {
             console.error("Phần tử không tồn tại:", dataTableIds[i]);
         }
     }
-
-    
-
 }
+
+
+
+// Hàm để cập nhật tổng số sản phẩm
+function updateTotalProducts(dataTable) {
+    var totalProducts = 0;
+
+    // Lấy danh sách tất cả các dòng trong bảng
+    var rows = dataTable.getElementsByTagName("tr");
+
+    // Bắt đầu từ 1 để bỏ qua header
+    for (var i = 1; i < rows.length; i++) {
+        // Tăng tổng số sản phẩm
+        totalProducts++;
+    }
+
+    // Lấy giá trị số lượng sản phẩm hiển thị mỗi trang
+    var dropdown = document.getElementById("dropdown-row-per-page");
+    var selectedValue = parseInt(dropdown.value);
+
+    // Hiển thị thông tin kết quả
+    var resultInfo = document.getElementById("result-info");
+    var startIndex = 1;
+    var endIndex = Math.min(startIndex + selectedValue - 1, totalProducts);
+
+    resultInfo.innerText = "Hiển thị kết quả từ " + startIndex + " - " + endIndex + " trên tổng " + totalProducts;
+}
+

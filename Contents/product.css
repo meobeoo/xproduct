@@ -141,7 +141,7 @@ body {
 
 .home_content {
     position: absolute;
-    height: 100%;
+    height: calc(100% - 50px);
     width: calc(100% - 50px);
     left: 50px;
     transition: ease-in-out 1s;
@@ -598,11 +598,17 @@ body {
 
 .home_content .main_content {
     width: 96.960486322%;
-    height: auto;
+    height: calc(100% - 66px);
     position: absolute;
     top: 66px;
     left: 1.52%;
     background-color: #f8fafb;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.main_content::-webkit-scrollbar {
+    display: none;
 }
 
 .main_content #row_radio {

@@ -71,6 +71,66 @@
                         <img src="/source-img/avt-people.svg">
                         <span>Bùi Nguyên Cường</span>
                     </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Hoàng Thuý Quỳnh Anh</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Phạm Đức Hoà</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Nguyễn Thị Hiền</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Nguyễn Đức Thịnh</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Ngô Thị Thuý</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Bùi Nguyên Cường</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Hoàng Thuý Quỳnh Anh</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Phạm Đức Hoà</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Nguyễn Thị Hiền</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Nguyễn Đức Thịnh</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Ngô Thị Thuý</span>
+                    </li>
+                    <li>
+                        <input type="checkbox">
+                        <img src="/source-img/avt-people.svg">
+                        <span>Bùi Nguyên Cường</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -521,42 +581,42 @@
         <div class="main_content" id="main_content">
             <div class="row" id="row_radio">
                 <div class="col-lg">
-                    <div class="col-sm radio_col" id="col_radio_1" onclick="checkRadio('today_radio')">
-                        <input type="radio" name="date_range" value="today" id="today_radio" checked>
+                    <div class="col-sm radio_col" id="col_radio_1">
+                        <input type="radio" name="date_range" value="today" id="today_radio" checked onclick="switchTableContent('today_radio')">
                         <label for="today" id="label_today">Hôm nay</label>
                     </div>
-                    <div class="col-sm radio_col" id="col_radio_2" onclick="checkRadio('yesterday_radio')">
-                        <input type="radio" name="date_range" value="yesterday" id="yesterday_radio">
+                    <div class="col-sm radio_col" id="col_radio_2">
+                        <input type="radio" name="date_range" value="yesterday" id="yesterday_radio" onclick="switchTableContent('yesterday_radio')">
                         <label for="yesterday" id="label_yesterday">Hôm qua</label>
                     </div>
-                    <div class="col-sm radio_col" id="col_radio_3" onclick="checkRadio('this_week_radio')">
-                        <input type="radio" name="date_range" value="this_week" id="this_week_radio">
+                    <div class="col-sm radio_col" id="col_radio_3">
+                        <input type="radio" name="date_range" value="this_week" id="this_week_radio" onclick="switchTableContent('this_week_radio')">
                         <label for="this_week" id="label_this_week">Tuần này</label>
                     </div>
-                    <div class="col-sm radio_col" id="col_radio_4" onclick="checkRadio('last_week_radio')">
-                        <input type="radio" name="date_range" value="last_week" id="last_week_radio">
+                    <div class="col-sm radio_col" id="col_radio_4">
+                        <input type="radio" name="date_range" value="last_week" id="last_week_radio" onclick="switchTableContent('last_week_radio')">
                         <label for="last_week" id="label_last_week">Tuần trước</label>
                     </div>
-                    <div class="col-sm radio_col" id="col_radio_5" onclick="checkRadio('this_month_radio')">
-                        <input type="radio" name="date_range" value="this_month" id="this_month_radio">
+                    <div class="col-sm radio_col" id="col_radio_5">
+                        <input type="radio" name="date_range" value="this_month" id="this_month_radio" onclick="switchTableContent('this_month_radio')">
                         <label for="this_month" id="label_this_month">Tháng này</label>
                     </div>
                 </div>
                 <div class="col-lg">
-                    <div class="col-sm radio_col" id="col_radio_6" onclick="checkRadio('last_month_radio')">
-                        <input type="radio" name="date_range" value="last_month" id="last_month_radio">
+                    <div class="col-sm radio_col" id="col_radio_6">
+                        <input type="radio" name="date_range" value="last_month" id="last_month_radio" onclick="switchTableContent('last_month_radio')">
                         <label for="last_month" id="label_last_month">Tháng trước</label>
                     </div>
-                    <div class="col-sm radio_col" id="col_radio_7" onclick="checkRadio('this_year_radio')">
-                        <input type="radio" name="date_range" value="this_year" id="this_year_radio">
+                    <div class="col-sm radio_col" id="col_radio_7">
+                        <input type="radio" name="date_range" value="this_year" id="this_year_radio" onclick="switchTableContent('this_year_radio')">
                         <label for="this_year" id="label_this_year">Năm nay</label>
                     </div>
-                    <div class="col-sm radio_col" id="col_radio_8" onclick="checkRadio('last_year_radio')">
-                        <input type="radio" name="date_range" value="last_year" id="last_year_radio">
+                    <div class="col-sm radio_col" id="col_radio_8">
+                        <input type="radio" name="date_range" value="last_year" id="last_year_radio" onclick="switchTableContent('last_year_radio')">
                         <label for="last_year" id="label_last_year">Năm trước</label>
                     </div>
-                    <div class="col-sm radio_col" id="col_radio_9" onclick="checkRadio('other_select_radio')">
-                        <input type="radio" name="date_range" value="other_select" id="other_select_radio">
+                    <div class="col-sm radio_col" id="col_radio_9">
+                        <input type="radio" name="date_range" value="other_select" id="other_select_radio" onclick="switchTableContent('other_select_radio')">
                         <label for="other_select" id="label_other_select">Chọn khác</label>
                     </div>
                 </div>
@@ -837,126 +897,6 @@
                     <td>12/12/2024</td>
                     <td>Phạm Đức Hoà</td>
                     <td><div class="done-status"></div>Đã hoàn thành</td>
-                </tr>
-            </table>
-            <table border="1" id="data-table-yesterday" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
-                </tr>
-            </table>
-            <table border="1" id="data-table-this-week" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
-                </tr>
-            </table>
-            <table border="1" id="data-table-last-week" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
-                </tr>
-            </table>
-            <table border="1" id="data-table-this-month" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
-                </tr>
-            </table>
-            <table border="1" id="data-table-last-month" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
-                </tr>
-            </table>
-            <table border="1" id="data-table-this-year" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
-                </tr>
-            </table>
-            <table border="1" id="data-table-last-year" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
-                </tr>
-            </table>
-            <table border="1" id="data-table-other-select" class="data_table" style="display: none;">
-                <tr>
-                    <th>STT</th>
-                    <th><input type="checkbox" id="check-all" class="checkbox"></th>
-                    <th>Thao tác</th>
-                    <th>Ảnh</th>
-                    <th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>
-                    <th>Nhóm sản phẩm</th>
-                    <th>Ngày bắt đầu</th>
-                    <th>Ngày kết thúc</th>
-                    <th>Người tạo</th>
-                    <th>Trạng thái sản phẩm</th>
                 </tr>
             </table>
             <div id="page">

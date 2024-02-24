@@ -16,6 +16,107 @@
     });
 });
 
+document.getElementById('today_radio').checked = true;
+
+
+function switchTableContent(radioId) {
+    var dataTable = document.getElementById('data-table');
+    var tableRows = dataTable.getElementsByTagName('tr');
+    console.log('Switching table content for radio: ', radioId);
+
+
+    while (dataTable.rows.length > 1) {
+        dataTable.deleteRow(1);
+    }
+
+    switch (radioId) {
+        case 'today_radio':
+            addDataRow(dataTable, 1, 'SP000001', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 2, 'SP000002', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 3, 'SP000003', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'in-progress-status', 'Đang làm');
+            addDataRow(dataTable, 4, 'SP000004', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 5, 'SP000005', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 4', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 6, 'SP000006', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 7, 'SP000007', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Thị Hiền', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 8, 'SP000008', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Hà Linh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 9, 'SP000009', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Sinh Hùng', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 10, 'SP000010', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Phạm Đức Hoà', 'done-status', 'Đã hoàn thành');
+            break;
+        case 'yesterday_radio':
+            addDataRow(dataTable, 1, 'SP000011', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
+            addDataRow(dataTable, 2, 'SP000012', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Phạm Đức Hoà', 'cancel-status', 'Đã huỷ');
+            addDataRow(dataTable, 3, 'SP000013', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'in-progress-status', 'Đang làm');
+            addDataRow(dataTable, 4, 'SP000014', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
+            break;
+        case 'this_week_radio':
+            break;
+        case 'last_week_radio':
+            break;
+        case 'this_month_radio':
+            break;
+        case 'last_month_radio':
+            break;
+        case 'this_year_radio':
+            break;
+        case 'last_year_radio':
+            break;
+        case 'other_select_radio':
+            break;
+        default:
+            break;
+    }
+    updateTotalRows(dataTable);
+    updateStatusCount(dataTable);
+}
+
+function updateTotalRows(table) {
+    var rows = table.getElementsByTagName("tr");
+    var totalRows = rows.length - 1;
+    document.getElementById("soluongtongsanpham").innerText = totalRows;
+}
+
+function updateStatusCount(table) {
+    var rows = table.getElementsByTagName("tr");
+
+    var countInProgress = 0;
+    var countDone = 0;
+    var countCancelled = 0;
+
+    for (var i = 1; i < rows.length; i++) { // Bắt đầu từ 1 để bỏ qua header
+        var statusCell = rows[i].getElementsByTagName("td")[10].innerText;
+
+        if (statusCell.includes("Đang làm")) {
+            countInProgress++;
+        } else if (statusCell.includes("Đã hoàn thành")) {
+            countDone++;
+        } else if (statusCell.includes("Đã huỷ")) {
+            countCancelled++;
+        }
+    }
+
+    document.getElementById("soluongsanphamdanglam").innerText = countInProgress;
+    document.getElementById("soluongsanphamdahoanthanh").innerText = countDone;
+    document.getElementById("soluongsanphamdahuy").innerText = countCancelled;
+}
+
+function addDataRow(table, stt, maSanPham, tenSanPham, nhomSanPham, ngayBatDau, ngayKetThuc, nguoiTao, statusClass, statusText) {
+    var newRow = table.insertRow(-1);
+    newRow.insertCell(0).innerHTML = stt;
+    newRow.insertCell(1).innerHTML = '<input type="checkbox" class="checkbox">';
+    newRow.insertCell(2).innerHTML = '<button class="detail" onclick="openDetailDiv()"></button>' +
+        '<button class="edit" onclick="openEditDiv()"></button>' +
+        '<button class="delete" onclick="deleteRow3(this)"></button>';
+    newRow.insertCell(3).innerHTML = '<img src="/source-img/icon-xproduct.png" style="width: 40px; height: 40px; border-radius: 5px;">';
+    newRow.insertCell(4).innerHTML = maSanPham;
+    newRow.insertCell(5).innerHTML = tenSanPham;
+    newRow.insertCell(6).innerHTML = nhomSanPham;
+    newRow.insertCell(7).innerHTML = ngayBatDau;
+    newRow.insertCell(8).innerHTML = ngayKetThuc;
+    newRow.insertCell(9).innerHTML = nguoiTao;
+    newRow.insertCell(10).innerHTML = '<div class="' + statusClass + '"></div>' + statusText;
+}
+
+
 document.addEventListener("DOMContentLoaded", function () {
     var userManager = document.querySelector(".home_content .user_manager");
     var toggleButton = document.querySelector(".info_button");
@@ -29,14 +130,12 @@ function goToSupportPage() {
     window.location.href = '/User/Support';
 }
 
-// Hàm chuyển hướng đến trang thong-bao.html
 function goToNotificationPage() {
     window.location.href = '/User/Notification';
 }
 
 
 function uploadImage() {
-    // Khi người dùng click vào div, mở hộp thoại chọn file
     document.getElementById('imageInput').click();
 }
 
@@ -109,7 +208,6 @@ function openDayStartDatePicker2() {
     flatpickr("#DayStart2", {
         dateFormat: "d/m/Y",
         onClose: function (selectedDates, dateStr, instance) {
-            // Đóng calendar khi người dùng chọn ngày
             instance.close();
         }
     }).open();
@@ -126,7 +224,6 @@ function openDayEndDatePicker2() {
     flatpickr("#DayEnd2", {
         dateFormat: "d/m/Y",
         onClose: function (selectedDates, dateStr, instance) {
-            // Đóng calendar khi người dùng chọn ngày
             instance.close();
         }
     }).open();
@@ -151,10 +248,9 @@ function filterPeople() {
     }
 }
 
-// Get all <li> elements
+
 var listItems = document.querySelectorAll('li');
 
-// Add click event listener to each <li>
 listItems.forEach(function (li) {
     li.addEventListener('click', function (event) {
         // Check if the click originated from the checkbox
@@ -943,36 +1039,6 @@ function checkRadio(radioId) {
         }
     }
 
-    switch (radioId) {
-        case 'today_radio':
-            document.getElementById('data-table').style.display = 'block';
-            break;
-        case 'yesterday_radio':
-            document.getElementById('data-table-yesterday').style.display = 'block';
-            break;
-        case 'this_week_radio':
-            document.getElementById('data-table-this-week').style.display = 'block';
-            break;
-        case 'last_week_radio':
-            document.getElementById('data-table-last-week').style.display = 'block';
-            break;
-        case 'this_month_radio':
-            document.getElementById('data-table-this-month').style.display = 'block';
-            break;
-        case 'last_month_radio':
-            document.getElementById('data-table-last-month').style.display = 'block';
-            break;
-        case 'this_year_radio':
-            document.getElementById('data-table-this-year').style.display = 'block';
-            break;
-        case 'last_year_radio':
-            document.getElementById('data-table-last-year').style.display = 'block';
-            break;
-        case 'other_select_radio':
-            document.getElementById('data-table-other-select').style.display = 'block';
-            break;
-        default:
-            document.getElementById('data-table').style.display = 'block';
-            break;
-    }
+    
+
 }

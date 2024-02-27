@@ -13,6 +13,31 @@ document.addEventListener("DOMContentLoaded", function () {
     switchTableContent('today_radio');
 });
 
+document.addEventListener("DOMContentLoaded", initializePage);
+
+function initializePage() {
+    var checkAllCheckbox = document.getElementById("check-all");
+    var deleteButtons = document.querySelectorAll(".delete");
+
+    checkAllCheckbox.addEventListener("change", function () {
+        toggleCheckboxes(this.checked);
+    });
+
+    for (var i = 0; i < deleteButtons.length; i++) {
+        deleteButtons[i].addEventListener("click", function () {
+            deleteSelectedRows();
+        });
+    }
+    switchTableContent('today_radio');
+}
+
+function toggleCheckboxes(checked) {
+    var otherCheckboxes = document.querySelectorAll(".checkbox");
+    for (var i = 0; i < otherCheckboxes.length; i++) {
+        otherCheckboxes[i].checked = checked;
+    }
+}
+
 
 function switchTableContent(radioId) {
     var dataTable = document.getElementById('data-table');
@@ -23,9 +48,11 @@ function switchTableContent(radioId) {
     while (dataTable.rows.length > 1) {
         dataTable.deleteRow(1);
     }
+    var checkAllCheckbox = document.getElementById("check-all");
 
     switch (radioId) {
         case 'today_radio':
+            checkAllCheckbox.checked = false;
             addDataRow(dataTable, 1, 'SP000001', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
             addDataRow(dataTable, 2, 'SP000002', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
             addDataRow(dataTable, 3, 'SP000003', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'in-progress-status', 'Đang làm');
@@ -58,24 +85,32 @@ function switchTableContent(radioId) {
             addDataRow(dataTable, 30, 'SP000010', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 5', '12/12/2023', '12/12/2024', 'Phạm Đức Hoà', 'done-status', 'Đã hoàn thành');
             break;
         case 'yesterday_radio':
+            checkAllCheckbox.checked = false;
             addDataRow(dataTable, 1, 'SP000011', 'Sản phẩm X-Product mobile', 'Nhóm sản phẩm 1', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'done-status', 'Đã hoàn thành');
             addDataRow(dataTable, 2, 'SP000012', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Phạm Đức Hoà', 'cancel-status', 'Đã huỷ');
             addDataRow(dataTable, 3, 'SP000013', 'Sản phẩm X-Product web', 'Nhóm sản phẩm 3', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'in-progress-status', 'Đang làm');
             addDataRow(dataTable, 4, 'SP000014', 'Sản phẩm X-Product app', 'Nhóm sản phẩm 2', '12/12/2023', '12/12/2024', 'Nguyễn Vũ Tuệ Minh', 'cancel-status', 'Đã huỷ');
             break;
         case 'this_week_radio':
+            checkAllCheckbox.checked = false;
             break;
         case 'last_week_radio':
+            checkAllCheckbox.checked = false;
             break;
         case 'this_month_radio':
+            checkAllCheckbox.checked = false;
             break;
         case 'last_month_radio':
+            checkAllCheckbox.checked = false;
             break;
         case 'this_year_radio':
+            checkAllCheckbox.checked = false;
             break;
         case 'last_year_radio':
+            checkAllCheckbox.checked = false;
             break;
         case 'other_select_radio':
+            checkAllCheckbox.checked = false;
             break;
         default:
             break;
@@ -911,27 +946,27 @@ document.addEventListener("DOMContentLoaded", function () {
     for (var i = 0; i < deleteButtons.length; i++) {
         deleteButtons[i].addEventListener("click", function () {
             deleteSelectedRows();
-        });
+    });
+}
+
+function deleteSelectedRows() {
+    var selectedRows = [];
+    for (var i = 0; i < otherCheckboxes.length; i++) {
+        if (otherCheckboxes[i].checked) {
+            selectedRows.push(otherCheckboxes[i].closest("tr"));
+        }
     }
 
-    function deleteSelectedRows() {
-        var selectedRows = [];
-        for (var i = 0; i < otherCheckboxes.length; i++) {
-            if (otherCheckboxes[i].checked) {
-                selectedRows.push(otherCheckboxes[i].closest("tr"));
-            }
-        }
-
-        for (var i = 0; i < selectedRows.length; i++) {
-            selectedRows[i].remove();
-        }
-
-        updateRowNumbers();
-        checkAllCheckbox.checked = areAllCheckboxesChecked();
-        updateTotalRows();
-        updateStatusCount()
-
+    for (var i = 0; i < selectedRows.length; i++) {
+        selectedRows[i].remove();
     }
+
+    updateRowNumbers();
+    checkAllCheckbox.checked = areAllCheckboxesChecked();
+    updateTotalRows();
+    updateStatusCount()
+
+}
 
     // Hàm để cập nhật lại số thứ tự trong bảng
     function updateRowNumbers() {

@@ -66,7 +66,7 @@ body {
     height: 24px;
     width: 24px;
     text-align: center;
-    background-image: url(~/source-img/menu.png);
+    background-image: url(/source-img/menu.png);
 }
 
 
@@ -174,7 +174,7 @@ body {
     height: 16px;
     top: 17px;
     right: 187px;
-    background-image: url(~/source-img/question.png);
+    background-image: url(/source-img/question.png);
     border: none;
     outline: none;
     background-color: #fff;
@@ -187,7 +187,7 @@ body {
     height: 16px;
     top: 17px;
     right: 149px;
-    background-image: url(~/source-img/notification.png);
+    background-image: url(/source-img/notification.png);
     border: none;
     outline: none;
     background-color: #fff;
@@ -200,7 +200,7 @@ body {
     height: 30px;
     top: 10px;
     right: 20px;
-    background-image: url(~/source-img/BG.png);
+    background-image: url(/source-img/BG.png);
     border: none;
     outline: none;
     background-color: #fff;
@@ -208,12 +208,12 @@ body {
 
 .tool_bar .question:hover {
     transform: scale(1.5);
-    background-image: url(~/source-img/question1.png);
+    background-image: url(/source-img/question1.png);
 }
 
 .tool_bar .notification:hover {
     transform: scale(1.5);
-    background-image: url(~/source-img/notification1.png);
+    background-image: url(/source-img/notification1.png);
 }
 
 .tool_bar .info_button .user_avt {
@@ -332,7 +332,7 @@ body {
     border: none;
     width: 20px;
     height: 20px;
-    background-image: url(~/source-img/delete-row.svg);
+    background-image: url(/source-img/delete-row.svg);
     background-repeat: no-repeat;
 }
 
@@ -560,7 +560,7 @@ body {
 }
 
 .tool_bar_2 #setting {
-    background-image: url(~/source-img/setting.svg);
+    background-image: url(/source-img/setting.svg);
     width: 30px;
     height: 30px;
     position: absolute;
@@ -683,7 +683,7 @@ body {
 }
 
 #filter-button {
-    background-image: url(~/source-img/loc.svg);
+    background-image: url(/source-img/loc.svg);
     width: 72px;
     height: 30px;
     border: none;
@@ -756,7 +756,7 @@ td {
     height: 20px;
     margin-right: 10px;
     border: none;
-    background-image: url(~/source-img/detail.svg);
+    background-image: url(/source-img/detail.svg);
     background-color: #fff;
     background-repeat: no-repeat;
 }
@@ -766,7 +766,7 @@ td {
     height: 20px;
     border: none;
     margin-right: 10px;
-    background-image: url(~/source-img/edit.svg);
+    background-image: url(/source-img/edit.svg);
     background-color: #fff;
     background-repeat: no-repeat;
 }
@@ -775,7 +775,7 @@ td {
     width: 20px;
     height: 20px;
     border: none;
-    background-image: url(~/source-img/delete.svg);
+    background-image: url(/source-img/delete.svg);
     background-color: #fff;
     background-repeat: no-repeat;
 }
@@ -883,7 +883,7 @@ th:nth-child(11), td:nth-child(11) {
     position: absolute;
     top: 17px;
     right: 131px;
-    background-image: url(~/source-img/nextnext.svg);
+    background-image: url(/source-img/nextnext.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: 0.5px solid #DEDEDF;
@@ -897,7 +897,7 @@ th:nth-child(11), td:nth-child(11) {
     position: absolute;
     top: 17px;
     right: 169px;
-    background-image: url(~/source-img/next.svg);
+    background-image: url(/source-img/next.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: 0.5px solid #DEDEDF;
@@ -911,7 +911,7 @@ th:nth-child(11), td:nth-child(11) {
     position: absolute;
     top: 17px;
     right: 359px;
-    background-image: url(~/source-img/back.svg);
+    background-image: url(/source-img/back.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: 0.5px solid #DEDEDF;
@@ -925,7 +925,7 @@ th:nth-child(11), td:nth-child(11) {
     position: absolute;
     top: 17px;
     right: 397px;
-    background-image: url(~/source-img/backback.svg);
+    background-image: url(/source-img/backback.svg);
     background-repeat: no-repeat;
     background-position: center;
     border: 0.5px solid #DEDEDF;
@@ -985,7 +985,7 @@ th:nth-child(11), td:nth-child(11) {
 
 #save-button, #save-button-2, #save-button-3 {
     border: none;
-    background-image: url(~/source-img/save.svg);
+    background-image: url(/source-img/save.svg);
     background-repeat: no-repeat;
     width: 80px;
     height: 30px;
@@ -996,7 +996,7 @@ th:nth-child(11), td:nth-child(11) {
 
 #done-button {
     border: none;
-    background-image: url(~/source-img/done-btn.svg);
+    background-image: url(/source-img/done-btn.svg);
     background-repeat: no-repeat;
     width: 80px;
     height: 30px;
@@ -1007,7 +1007,7 @@ th:nth-child(11), td:nth-child(11) {
 
 #cancel-button, #cancel-button-2, #cancel-button-3 {
     border: none;
-    background-image: url(~/source-img/cancel.svg);
+    background-image: url(/source-img/cancel.svg);
     background-repeat: no-repeat;
     width: 80px;
     height: 30px;
@@ -1017,7 +1017,7 @@ th:nth-child(11), td:nth-child(11) {
 }
 
 #add-photo {
-    background-image: url(~/source-img/add-a-photo.svg);
+    background-image: url(/source-img/add-a-photo.svg);
     width: 104px;
     height: 104px;
     position: absolute;
@@ -1120,7 +1120,7 @@ th:nth-child(11), td:nth-child(11) {
 }
 
 #pick-file {
-    background-image: url('~/source-img/add-file.svg');
+    background-image: url('/source-img/add-file.svg');
     position: absolute;
     top: 39px;
     left: 0;
@@ -1136,7 +1136,7 @@ th:nth-child(11), td:nth-child(11) {
 }
 
 #add-people {
-    background-image: url(~/source-img/add-people.svg);
+    background-image: url(/source-img/add-people.svg);
     width: 153px;
     height: 19px;
     border: none;

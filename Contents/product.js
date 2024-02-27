@@ -1010,6 +1010,7 @@ document.getElementById('filter-button').addEventListener('click', function () {
     var statusFilter = document.getElementById('dropdown-status').value.toLowerCase();
     var creatorFilter = document.getElementById('search-by-name').value.toLowerCase();
 
+    var rowIndex = 0; // Số thứ tự dòng
     for (var i = 1; i < document.getElementById('data-table').rows.length; i++) {
         var nameColumn4 = document.getElementById('data-table').rows[i].cells[4].innerText.toLowerCase(); // Cột mã sản phẩm
         var nameColumn5 = document.getElementById('data-table').rows[i].cells[5].innerText.toLowerCase(); // Cột tên sản phẩm
@@ -1025,11 +1026,15 @@ document.getElementById('filter-button').addEventListener('click', function () {
         // Hiển thị dòng nếu có bất kỳ điều kiện nào khớp
         if (nameMatches && groupMatches && statusMatches && creatorMatches) {
             document.getElementById('data-table').rows[i].style.display = '';
+            rowIndex++;
+            // Cập nhật số thứ tự
+            document.getElementById('data-table').rows[i].cells[0].innerText = rowIndex;
         } else {
             document.getElementById('data-table').rows[i].style.display = 'none';
         }
     }
 });
+
 
 
 function checkRadio(radioId) {

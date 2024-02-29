@@ -439,8 +439,7 @@ function validateForm() {
     var productSize = document.querySelector('[name="product-size"]').value;
     var dayStart = document.querySelector('[name="DayStart"]').value;
     var dayEnd = document.querySelector('[name="DayEnd"]').value;
-    var describeInput = document.getElementById('describe-input').value;
-    var imageInput = document.getElementById('imageInput');
+
 
     // Kiểm tra xem các trường có đầy đủ thông tin không
     if (productName === '') {
@@ -468,16 +467,7 @@ function validateForm() {
         isValid = false;
     }
 
-    if (describeInput.trim() === '') {
-        errorMessage += '- Mô tả sản phẩm không được trống.\n';
-        isValid = false;
-    }
 
-    // Kiểm tra xem ảnh đã được chọn hay chưa
-    if (!imageInput.files || imageInput.files.length === 0) {
-        errorMessage += '- Bạn phải chọn ảnh sản phẩm.\n';
-        isValid = false;
-    }
 
     // Chuyển đổi chuỗi ngày thành đối tượng Date
     var startDate = new Date(parseDate(dayStart));

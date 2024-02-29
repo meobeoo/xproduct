@@ -1,7 +1,6 @@
 ﻿@{
     Layout = null;
 }
-@Styles.Render("~/Contents/product.css")
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +24,7 @@
 
     <!-- Include Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    @Styles.Render("~/Contents/product.css")
 
 </head>
 <body>
@@ -710,7 +710,7 @@
                 </tr>
             </table>
             <div id="page">
-                <span id="result-info">Hiển thị kết quả từ 1-20 trên tổng 100</span>
+                <span id="result-info">Hiển thị kết quả từ 1-row per page trên tổng all rows</span>
                 <select id="dropdown-row-per-page" onchange="changeNumberRows()">
                     <option value="20">20/trang</option>
                     <option value="40">40/trang</option>

@@ -1419,6 +1419,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 10px;
     color: #1A7AC2;
+    cursor: default;
 }
 
 #soluongtongsanpham {
@@ -1427,6 +1428,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 32px;
     color: #1A7AC2;
+    cursor: default;
 }
 
 #logotongsanpham {
@@ -1448,6 +1450,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 10px;
     color: #23ABA5;
+    cursor: default;
 }
 
 #soluongsanphamdanglam {
@@ -1456,6 +1459,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 32px;
     color: #23ABA5;
+    cursor: default;
 }
 
 #logosanphamdanglam {
@@ -1477,6 +1481,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 10px;
     color: #42AD3A;
+    cursor: default;
 }
 
 #soluongsanphamdahoanthanh {
@@ -1485,6 +1490,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 32px;
     color: #42AD3A;
+    cursor: default;
 }
 
 #logosanphamdahoanthanh {
@@ -1506,6 +1512,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 10px;
     color: #EB0000;
+    cursor: default;
 }
 
 #soluongsanphamdahuy {
@@ -1514,6 +1521,7 @@ th:nth-child(11), td:nth-child(11) {
     left: 20px;
     top: 32px;
     color: #EB0000;
+    cursor: default;
 }
 
 #logosanphamdahuy {
@@ -1716,6 +1724,9 @@ th:nth-child(11), td:nth-child(11) {
     .main_content .quantity {
         margin-top: 500px;
     }
+    .data_table  {
+        margin-top: 245px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1313px) {
@@ -1726,10 +1737,6 @@ th:nth-child(11), td:nth-child(11) {
 
     .main_content .quantity {
         margin-top: 98px;
-    }
-
-    .main_content .quantity {
-        margin-top: 500px;
     }
 }
 

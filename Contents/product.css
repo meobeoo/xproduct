@@ -15,7 +15,7 @@ body {
     height: 100%;
     width: 50px;
     background: #ffffff;
-    transition: ease-in-out 1s;
+    transition: ease-in-out 0.3s;
     z-index: 9999;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -29,7 +29,6 @@ body {
     left: 0;
     z-index: 4;
 }
-
 
 
 .sidebar.thut {
@@ -144,7 +143,7 @@ body {
     height: calc(100% - 50px);
     width: calc(100% - 50px);
     left: 50px;
-    transition: ease-in-out 1s;
+    transition: ease-in-out 0.3s;
     background-color: #f8fafb;
     z-index: 1;
 }
@@ -165,7 +164,7 @@ body {
     background-color: #fff;
     z-index: 2;
     border-bottom: 1px solid #F3F4F6;
-    transition: 1s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 
 .tool_bar .question {

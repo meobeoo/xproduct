@@ -17,7 +17,7 @@ body {
     height: 100%;
     width: 50px;
     background: #ffffff;
-    transition: ease-in-out 1s;
+    transition: ease-in-out 0.3s;
     z-index: 9999;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -145,7 +145,7 @@ body {
     height: 100%;
     width: calc(100% - 50px);
     left: 50px;
-    transition: ease-in-out 1s;
+    transition: ease-in-out 0.3s;
     background-color: #f8fafb;
     z-index: 1;
     overflow-y: auto;
